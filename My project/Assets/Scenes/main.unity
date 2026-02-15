@@ -222,7 +222,8 @@ GameObject:
   - component: {fileID: 712388698}
   - component: {fileID: 712388697}
   - component: {fileID: 712388696}
-  - component: {fileID: 712388695}
+  - component: {fileID: 712388701}
+  - component: {fileID: 712388700}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -230,21 +231,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &712388695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712388694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af47916795be4aa48b376d70561f4b66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 10
-  rb: {fileID: 0}
-  moveInput: {x: 0, y: 0}
 --- !u!61 &712388696
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -392,6 +378,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &712388700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712388694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a27bd2508be0894cbef332da04bcffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!114 &712388701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712388694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37b2d326d0cbf245a00670f7d86653f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  moveSpeed: 10
 --- !u!1 &940958313
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,12 +550,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 940958313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 455fd27f050133741902a9eaa31925b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 59e9100cc93a3eb4ea6eb17aaf732fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow2D
   target: {fileID: 712388699}
   smoothTime: 0.12
-  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1524069378
 GameObject:
   m_ObjectHideFlags: 0
