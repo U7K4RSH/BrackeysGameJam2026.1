@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RoomDefinition : MonoBehaviour
 {
+      
     public int roomId = 0;
 
     [Header("Markers")]
@@ -10,6 +11,7 @@ public class RoomDefinition : MonoBehaviour
     [Header("Entry spawns for DoorId 0-3")]
     public Transform[] entrySpawns = new Transform[4];
 
+    public Transform Keyspawn;
     public Transform GetEntrySpawn(int doorId)
     {
         if (doorId < 0 || doorId > 3) return playerSpawnDefault;

@@ -2,6 +2,21 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+
+    [Header("Win / Key")]
+    [SerializeField] private GameObject keyPrefab;   
+    [SerializeField] private int exitDoorId = 3;     
+
+    private int exitRoomId;      
+    private int keyRoomId;      
+    private bool hasKey = false;
+
+
+
+
+
+
+
     public static RoomManager Instance { get; private set; }
 
     [Header("Room prefabs (index = roomId)")]
@@ -30,8 +45,19 @@ public class RoomManager : MonoBehaviour
     private void Start()
     {
         rng = new System.Random(seed);
-        GenerateMapping();
 
+        int n = roomPrefabs.Length;
+
+        // EXIT = last room prefab
+        exitRoomId = n - 1;
+
+        // KEY = random room, but not start (0) and not exit
+        do { keyRoomId = rng.Next(0, n); }
+        while (keyRoomId == 0 || keyRoomId == exitRoomId);
+
+
+
+        GenerateMapping();
         LoadRoom(0, entryDoorId: 0);
     }
 
@@ -39,8 +65,21 @@ public class RoomManager : MonoBehaviour
     {
         if (Time.time < doorlockuntil) return; // still in cooldown
         if (currentRoom == null) return;
-        
-        doorlockuntil = Time.time + doorCooldown;
+
+        if (currentRoomId == exitRoomId && doorId == exitDoorId)
+        {
+            if (!hasKey)
+            {
+                Debug.Log("Exit is locked. Need the key.");
+                return;
+            }
+
+            Debug.Log("YOU WIN!");
+            // TODO: show UI / load win scene
+            return;
+        }
+
+            doorlockuntil = Time.time + doorCooldown;
 
         int nextRoomId = map[currentRoomId, doorId];
         LoadRoom(nextRoomId, entryDoorId: doorId);
@@ -61,6 +100,14 @@ public class RoomManager : MonoBehaviour
 
         Transform spawn = currentRoom.GetEntrySpawn(entryDoorId);
         player.position = spawn.position;
+
+        if (!hasKey && roomId == keyRoomId && keyPrefab != null)
+        {
+            if (currentRoom.Keyspawn != null)
+                Instantiate(keyPrefab, currentRoom.Keyspawn.position, Quaternion.identity);
+            else
+                Instantiate(keyPrefab, currentRoom.playerSpawnDefault.position, Quaternion.identity);
+        }
     }
 
     private void GenerateMapping()
@@ -80,7 +127,7 @@ public class RoomManager : MonoBehaviour
                 {
                     next = (r + rng.Next(1, n)) % n; // ensure different room if possible) 
                 }
-                map[r, d] = rng.Next(0, n);
+                map[r, d] = next;
             }
         }
         // Optional: avoid start Door_0 sending you back to start immediately
@@ -100,5 +147,11 @@ public class RoomManager : MonoBehaviour
     { 
     
     SetAllDoorsBlocking(false);
+    }
+
+    public void CollectKey()
+    {
+        hasKey = true;
+        Debug.Log("Key collected!");
     }
 }
