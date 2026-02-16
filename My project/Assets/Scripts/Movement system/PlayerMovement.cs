@@ -52,6 +52,6 @@ public class PlayerMovement : MonoBehaviour
         // fixed update ko physics update ke liye use karte hai, and ye har tick me chalta hai, frame rate se independent.
         // ya pe hum rigidbody ko directly move karenge, toh smooth movement milega.
 
-        rb.velocity = moveInput * moveSpeed;
+        rb.linearVelocity = moveInput * moveSpeed;
     }
 }
