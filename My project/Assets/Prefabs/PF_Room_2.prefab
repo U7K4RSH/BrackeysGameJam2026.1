@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomDefinition
   roomId: 1
-  playerSpawnDefault: {fileID: 0}
+  playerSpawnDefault: {fileID: 5967658003096972888}
   entrySpawns:
   - {fileID: 0}
   - {fileID: 0}
