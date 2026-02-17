@@ -1,12 +1,13 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
+using UnityEngine.UIElements;
 
 public class SimpleHUD : MonoBehaviour
 {
-    
+    [SerializeField] private TMP_Text roomCounterLabel;
     [SerializeField] private TMP_Text pauseButtonLabel;
-
+    [SerializeField] private GameObject winPanel;
     private bool isPaused = false;
 
     public void TogglePause()
@@ -33,5 +34,19 @@ public class SimpleHUD : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    public void SetRoomCounter(int roomId)
+    {
+        if (roomCounterLabel != null)
+            roomCounterLabel.text = $"ROOM {roomId}";
+        Debug.Log("Room counter set to: " + roomId);
+    }
+    public void ShowWin()
+    {
+        if (winPanel != null)
+            winPanel.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 }

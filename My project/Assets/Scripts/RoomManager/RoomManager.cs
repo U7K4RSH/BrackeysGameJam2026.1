@@ -11,12 +11,6 @@ public class RoomManager : MonoBehaviour
     private int keyRoomId;      
     private bool hasKey = false;
 
-
-
-
-
-
-
     public static RoomManager Instance { get; private set; }
 
     [Header("Room prefabs (index = roomId)")]
@@ -36,6 +30,7 @@ public class RoomManager : MonoBehaviour
     private float doorlockuntil = 0f; // simple cooldown to prevent door spamming
     [SerializeField] private float doorCooldown = 2.5f;
 
+    [SerializeField] private SimpleHUD hud;
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -72,7 +67,7 @@ public class RoomManager : MonoBehaviour
                 Debug.Log("Exit is locked. Need the key.");
                 return;
             }
-
+            hud.ShowWin();
             Debug.Log("YOU WIN!");
             
             return;
@@ -96,6 +91,9 @@ public class RoomManager : MonoBehaviour
         GameObject roomGO = Instantiate(roomPrefabs[roomId]);
         currentRoom = roomGO.GetComponent<RoomDefinition>();
         currentRoomId = roomId;
+        
+        
+        
 
         Transform spawn = currentRoom.GetEntrySpawn(entryDoorId);
         player.position = spawn.position;
@@ -107,6 +105,10 @@ public class RoomManager : MonoBehaviour
             else
                 Instantiate(keyPrefab, currentRoom.playerSpawnDefault.position, Quaternion.identity);
         }
+        Debug.Log("LoadRoom called on: " + gameObject.name);
+        if (hud != null)
+            hud.SetRoomCounter(currentRoomId);
+        Debug.Log("HUD is assigned: " + hud.gameObject.name);
     }
 
     private void GenerateMapping()
