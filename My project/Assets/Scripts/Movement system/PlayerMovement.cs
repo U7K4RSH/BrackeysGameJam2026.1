@@ -10,9 +10,13 @@ public class PlayerMovement : MonoBehaviour
     // ye speed of movement hai (units per second-ish)
     [SerializeField] private float moveSpeed = 6f;
 
+    [SerializeField] private Animator animator;
+
+
     private Rigidbody2D rb;        // Physis body component, jisme hum movement apply karenge
     private Vector2 moveInput;     // vector de jo keyboard se input store karega, x aur y dono ke liye
 
+    private Vector2 lastDir = Vector2.down;
     private void Awake()
     {
         // rigidbody component ko get karo, aur store karlo variable me for later use
@@ -23,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
 
         // colliders ke saath physics interactions me rotation nahi chahiye, toh freezeRotation true.
         rb.freezeRotation = true;
+
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -43,8 +50,30 @@ public class PlayerMovement : MonoBehaviour
         if (k.sKey.isPressed || k.downArrowKey.isPressed) input.y -= 1f;
         if (k.wKey.isPressed || k.upArrowKey.isPressed) input.y += 1f;
 
+
         // normalise karne se diagonal movement bhi same speed pe hota hai, warna diagonal me speed zyada ho jati hai.
         moveInput = input.normalized;
+
+        if (animator != null)
+        {
+            float speed = moveInput.magnitude;
+            animator.SetFloat("Speed", speed);
+
+            if (speed > 0.001f)
+            {
+                // snap so you always land on one of the 8 directions (no mushy blending)
+                Vector2 dir = SnapTo8(moveInput);
+
+                animator.SetFloat("MoveX", dir.x);
+                animator.SetFloat("MoveY", dir.y);
+
+                // keep last facing for idle
+                lastDir = dir;
+                animator.SetFloat("LastMoveX", lastDir.x);
+                animator.SetFloat("LastMoveY", lastDir.y);
+            }
+        }
+        
     }
 
     private void FixedUpdate()
@@ -53,5 +82,29 @@ public class PlayerMovement : MonoBehaviour
         // ya pe hum rigidbody ko directly move karenge, toh smooth movement milega.
 
         rb.linearVelocity = moveInput * moveSpeed;
+    }
+
+    private Vector2 SnapTo8(Vector2 v)
+    {
+        if (v == Vector2.zero) return Vector2.down;
+
+        float angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+        if (angle < 0) angle += 360f;
+
+        int slice = Mathf.RoundToInt(angle / 45f) % 8;
+
+        switch (slice)
+        {
+            case 0: return Vector2.right;                  // E
+            case 1: return new Vector2(1, 1).normalized;   // NE
+            case 2: return Vector2.up;                     // N
+            case 3: return new Vector2(-1, 1).normalized;  // NW
+            case 4: return Vector2.left;                   // W
+            case 5: return new Vector2(-1, -1).normalized; // SW
+            case 6: return Vector2.down;                   // S
+            case 7: return new Vector2(1, -1).normalized;  // SE
+        }
+
+        return Vector2.down;
     }
 }

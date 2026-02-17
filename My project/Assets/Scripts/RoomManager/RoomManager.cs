@@ -48,10 +48,9 @@ public class RoomManager : MonoBehaviour
 
         int n = roomPrefabs.Length;
 
-        // EXIT = last room prefab
+        
         exitRoomId = n - 1;
 
-        // KEY = random room, but not start (0) and not exit
         do { keyRoomId = rng.Next(0, n); }
         while (keyRoomId == 0 || keyRoomId == exitRoomId);
 
@@ -63,7 +62,7 @@ public class RoomManager : MonoBehaviour
 
     public void EnterDoor(int doorId)
     {
-        if (Time.time < doorlockuntil) return; // still in cooldown
+        if (Time.time < doorlockuntil) return; 
         if (currentRoom == null) return;
 
         if (currentRoomId == exitRoomId && doorId == exitDoorId)
@@ -75,7 +74,7 @@ public class RoomManager : MonoBehaviour
             }
 
             Debug.Log("YOU WIN!");
-            // TODO: show UI / load win scene
+            
             return;
         }
 
@@ -125,12 +124,12 @@ public class RoomManager : MonoBehaviour
 
                 if (n > 1 && next == r)
                 {
-                    next = (r + rng.Next(1, n)) % n; // ensure different room if possible) 
+                    next = (r + rng.Next(1, n)) % n; 
                 }
                 map[r, d] = next;
             }
         }
-        // Optional: avoid start Door_0 sending you back to start immediately
+        
         if (n > 1 && map[0, 0] == 0) map[0, 0] = 1;
     }
 
