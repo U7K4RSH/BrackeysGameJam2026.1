@@ -10,7 +10,7 @@ public class RoomManager : MonoBehaviour
     private int exitRoomId;      
     private int keyRoomId;      
     private bool hasKey = false;
-
+    private bool keyVisible = false;
 
 
 
@@ -100,14 +100,7 @@ public class RoomManager : MonoBehaviour
 
         Transform spawn = currentRoom.GetEntrySpawn(entryDoorId);
         player.position = spawn.position;
-
-        if (!hasKey && roomId == keyRoomId && keyPrefab != null)
-        {
-            if (currentRoom.Keyspawn != null)
-                Instantiate(keyPrefab, currentRoom.Keyspawn.position, Quaternion.identity);
-            else
-                Instantiate(keyPrefab, currentRoom.playerSpawnDefault.position, Quaternion.identity);
-        }
+        currentRoomId = roomId;
     }
 
     private void GenerateMapping()
@@ -153,5 +146,17 @@ public class RoomManager : MonoBehaviour
     {
         hasKey = true;
         Debug.Log("Key collected!");
+    }
+    public void MakeKeyVisible()
+    {
+        keyVisible = true;
+        Debug.Log("Key visible!");
+        if (!hasKey && currentRoomId == keyRoomId && keyPrefab != null && keyVisible)
+        {
+            if (currentRoom.Keyspawn != null)
+                Instantiate(keyPrefab, currentRoom.Keyspawn.position, Quaternion.identity);
+            else
+                Instantiate(keyPrefab, currentRoom.playerSpawnDefault.position, Quaternion.identity);
+        }
     }
 }
