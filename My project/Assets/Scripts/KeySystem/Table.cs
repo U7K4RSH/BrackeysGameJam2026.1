@@ -22,7 +22,6 @@ public class Table : MonoBehaviour
     {
         if (playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            Debug.Log("Hello");
             RoomManager.Instance.MakeKeyVisible();
         }
     }
