@@ -1,0 +1,3523 @@
+fileFormatVersion: 2
+guid: 2574aa00f21a4ca40bf6147b76de4266
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5335678339590713423
+    second: Hotel_Room_0
+  - first:
+      213: 95495352216808019
+    second: Hotel_Room_1
+  - first:
+      213: 4861768637407652574
+    second: Hotel_Room_2
+  - first:
+      213: 3687813707388927318
+    second: Hotel_Room_3
+  - first:
+      213: -699081078605314636
+    second: Hotel_Room_4
+  - first:
+      213: -7892795037603183655
+    second: Hotel_Room_5
+  - first:
+      213: 2040047153484600457
+    second: Hotel_Room_6
+  - first:
+      213: -4123974888202146772
+    second: Hotel_Room_7
+  - first:
+      213: -8936751644377809427
+    second: Hotel_Room_8
+  - first:
+      213: -3271296911807049372
+    second: Hotel_Room_9
+  - first:
+      213: 5883511185972276245
+    second: Hotel_Room_10
+  - first:
+      213: -6207167233245337911
+    second: Hotel_Room_11
+  - first:
+      213: 3234833734694520692
+    second: Hotel_Room_12
+  - first:
+      213: -2083184415927332873
+    second: Hotel_Room_13
+  - first:
+      213: 367852598916694878
+    second: Hotel_Room_14
+  - first:
+      213: 6619503662524034973
+    second: Hotel_Room_15
+  - first:
+      213: -1489339924745319525
+    second: Hotel_Room_16
+  - first:
+      213: -1139340323975083828
+    second: Hotel_Room_17
+  - first:
+      213: -5928319921103076959
+    second: Hotel_Room_18
+  - first:
+      213: 1841107027076607791
+    second: Hotel_Room_19
+  - first:
+      213: 285436835810085460
+    second: Hotel_Room_20
+  - first:
+      213: -4560180080278230004
+    second: Hotel_Room_21
+  - first:
+      213: -5994230228698260238
+    second: Hotel_Room_22
+  - first:
+      213: -3392210599365275658
+    second: Hotel_Room_23
+  - first:
+      213: -84514667348572351
+    second: Hotel_Room_24
+  - first:
+      213: -1300744663459070303
+    second: Hotel_Room_25
+  - first:
+      213: -5659722579544344878
+    second: Hotel_Room_26
+  - first:
+      213: -2077686605478279602
+    second: Hotel_Room_27
+  - first:
+      213: 3551795285565157446
+    second: Hotel_Room_28
+  - first:
+      213: -2394684186292766806
+    second: Hotel_Room_29
+  - first:
+      213: 6262215415945541403
+    second: Hotel_Room_30
+  - first:
+      213: -2569880764424844033
+    second: Hotel_Room_31
+  - first:
+      213: -2191757257648426311
+    second: Hotel_Room_32
+  - first:
+      213: -5022738997329794170
+    second: Hotel_Room_33
+  - first:
+      213: 3835355122491681437
+    second: Hotel_Room_34
+  - first:
+      213: 3137126664918149154
+    second: Hotel_Room_35
+  - first:
+      213: 4400429648342898988
+    second: Hotel_Room_36
+  - first:
+      213: -8183354470679407704
+    second: Hotel_Room_37
+  - first:
+      213: 59799525477312920
+    second: Hotel_Room_38
+  - first:
+      213: 892363125127911378
+    second: Hotel_Room_39
+  - first:
+      213: -4235979763187553969
+    second: Hotel_Room_40
+  - first:
+      213: 9096585322034188210
+    second: Hotel_Room_41
+  - first:
+      213: -912634837521623522
+    second: Hotel_Room_42
+  - first:
+      213: -3719746740044287116
+    second: Hotel_Room_43
+  - first:
+      213: 2037237219017937024
+    second: Hotel_Room_44
+  - first:
+      213: -4242253487215963949
+    second: Hotel_Room_45
+  - first:
+      213: 532040226146626027
+    second: Hotel_Room_46
+  - first:
+      213: 7564157327852229834
+    second: Hotel_Room_47
+  - first:
+      213: 6345742985652575981
+    second: Hotel_Room_48
+  - first:
+      213: -170613079145156122
+    second: Hotel_Room_49
+  - first:
+      213: -3630417405524088090
+    second: Hotel_Room_50
+  - first:
+      213: -6890410129445703585
+    second: Hotel_Room_51
+  - first:
+      213: 189104325050225266
+    second: Hotel_Room_52
+  - first:
+      213: -4075623800532196523
+    second: Hotel_Room_53
+  - first:
+      213: -1930206966385771479
+    second: Hotel_Room_54
+  - first:
+      213: 1108105032681110409
+    second: Hotel_Room_55
+  - first:
+      213: 8712159132840593188
+    second: Hotel_Room_56
+  - first:
+      213: -3960268582460912164
+    second: Hotel_Room_57
+  - first:
+      213: -5491803028790671210
+    second: Hotel_Room_58
+  - first:
+      213: 6631120875405685280
+    second: Hotel_Room_59
+  - first:
+      213: -4548390378244719641
+    second: Hotel_Room_60
+  - first:
+      213: 3640370876574302328
+    second: Hotel_Room_61
+  - first:
+      213: 7212524800033310270
+    second: Hotel_Room_62
+  - first:
+      213: -6409800435608836958
+    second: Hotel_Room_63
+  - first:
+      213: -7625403840208819761
+    second: Hotel_Room_64
+  - first:
+      213: 1517656499413173154
+    second: Hotel_Room_65
+  - first:
+      213: -3333782776417377805
+    second: Hotel_Room_66
+  - first:
+      213: 8084299839566456963
+    second: Hotel_Room_67
+  - first:
+      213: 5136415675448318888
+    second: Hotel_Room_68
+  - first:
+      213: 1758614158517930777
+    second: Hotel_Room_69
+  - first:
+      213: -3012369302719693981
+    second: Hotel_Room_70
+  - first:
+      213: 1794690289316697100
+    second: Hotel_Room_71
+  - first:
+      213: 7067582334833915686
+    second: Hotel_Room_72
+  - first:
+      213: 3071539549615401899
+    second: Hotel_Room_73
+  - first:
+      213: -6910406691880621372
+    second: Hotel_Room_74
+  - first:
+      213: 3733616218663008949
+    second: Hotel_Room_75
+  - first:
+      213: -7631421658693375552
+    second: Hotel_Room_76
+  - first:
+      213: -1528343711050886071
+    second: Hotel_Room_77
+  - first:
+      213: -1334025937208656637
+    second: Hotel_Room_78
+  - first:
+      213: -1658499680175523136
+    second: Hotel_Room_79
+  - first:
+      213: -4486286275314826525
+    second: Hotel_Room_80
+  - first:
+      213: -2671099749319172487
+    second: Hotel_Room_81
+  - first:
+      213: 4592876575392879910
+    second: Hotel_Room_82
+  - first:
+      213: -1263229522456699760
+    second: Hotel_Room_83
+  - first:
+      213: 5310860548430106497
+    second: Hotel_Room_84
+  - first:
+      213: -5413988459275296043
+    second: Hotel_Room_85
+  - first:
+      213: 8324035633486185453
+    second: Hotel_Room_86
+  - first:
+      213: -1961818994589598709
+    second: Hotel_Room_87
+  - first:
+      213: 7968830235181379088
+    second: Hotel_Room_88
+  - first:
+      213: -2124527274456120228
+    second: Hotel_Room_89
+  - first:
+      213: 2534268854819816723
+    second: Hotel_Room_90
+  - first:
+      213: 8449249830680265539
+    second: Hotel_Room_91
+  - first:
+      213: 6358386350811598938
+    second: Hotel_Room_92
+  - first:
+      213: -2525637902707632017
+    second: Hotel_Room_93
+  - first:
+      213: -8710838967273417152
+    second: Hotel_Room_94
+  - first:
+      213: -7555098134859490959
+    second: Hotel_Room_95
+  - first:
+      213: 8057579699258570476
+    second: Hotel_Room_96
+  - first:
+      213: -6258819012437639376
+    second: Hotel_Room_97
+  - first:
+      213: -4177825557150190145
+    second: Hotel_Room_98
+  - first:
+      213: 1484515521712497308
+    second: Hotel_Room_99
+  - first:
+      213: 8352510500848094453
+    second: Hotel_Room_100
+  - first:
+      213: 5252168729539310363
+    second: Hotel_Room_101
+  - first:
+      213: 3251254268134578825
+    second: Hotel_Room_102
+  - first:
+      213: -3424005684478086354
+    second: Hotel_Room_103
+  - first:
+      213: -1139163036107567723
+    second: Hotel_Room_104
+  - first:
+      213: -8821341902447406406
+    second: Hotel_Room_105
+  - first:
+      213: 4945323740546470547
+    second: Hotel_Room_106
+  - first:
+      213: 5235638428557299456
+    second: Hotel_Room_107
+  - first:
+      213: -9111641391084810407
+    second: Hotel_Room_108
+  - first:
+      213: 5271191879534342137
+    second: Hotel_Room_109
+  - first:
+      213: 3876910940439232518
+    second: Hotel_Room_110
+  - first:
+      213: -7542560849737618005
+    second: Hotel_Room_111
+  - first:
+      213: 8695073525274278833
+    second: Hotel_Room_112
+  - first:
+      213: -5358035726320376428
+    second: Hotel_Room_113
+  - first:
+      213: 4891231929578890410
+    second: Hotel_Room_114
+  - first:
+      213: -6417862369980920265
+    second: Hotel_Room_115
+  - first:
+      213: -4087636552965739133
+    second: Hotel_Room_116
+  - first:
+      213: 4070413757445236211
+    second: Hotel_Room_117
+  - first:
+      213: 5012280163099598183
+    second: Hotel_Room_118
+  - first:
+      213: -7608079616103195019
+    second: Hotel_Room_119
+  - first:
+      213: -1249133803906281946
+    second: Hotel_Room_120
+  - first:
+      213: 8797000078338815585
+    second: Hotel_Room_121
+  - first:
+      213: 791271149395767477
+    second: Hotel_Room_122
+  - first:
+      213: 8206434639489849587
+    second: Hotel_Room_123
+  - first:
+      213: 1280676556015421962
+    second: Hotel_Room_124
+  - first:
+      213: -7108363378354887747
+    second: Hotel_Room_125
+  - first:
+      213: 587975344812039153
+    second: Hotel_Room_126
+  - first:
+      213: 4365639104556312309
+    second: Hotel_Room_127
+  - first:
+      213: 7897561042592961631
+    second: Hotel_Room_128
+  - first:
+      213: -192431567640292932
+    second: Hotel_Room_129
+  - first:
+      213: 1377116016246546425
+    second: Hotel_Room_130
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 768
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hotel_Room_0
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 754
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf03fcd1dcd3f5b0800000000000000
+      internalID: -5335678339590713423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 641
+        width: 44
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35a65925484435100800000000000000
+      internalID: 95495352216808019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 640
+        width: 80
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda61d421d8787340800000000000000
+      internalID: 4861768637407652574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_3
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 634
+        width: 47
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65dbbba270fbd2330800000000000000
+      internalID: 3687813707388927318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_4
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 691
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b58880867d5c46f0800000000000000
+      internalID: -699081078605314636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_5
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 693
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d342ba2bb8277290800000000000000
+      internalID: -7892795037603183655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_6
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 693
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9841f74d314bf4c10800000000000000
+      internalID: 2040047153484600457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_7
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 698
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2c641e50b2b4c6c0800000000000000
+      internalID: -4123974888202146772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_8
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 703
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dedf8f67ab74af380800000000000000
+      internalID: -8936751644377809427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_9
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 703
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46198e07ac40a92d0800000000000000
+      internalID: -3271296911807049372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_10
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 701
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51c2aef504e66a150800000000000000
+      internalID: 5883511185972276245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_11
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 696
+        width: 26
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6a7f0d946bbd9a0800000000000000
+      internalID: -6207167233245337911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_12
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 717
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477caef842074ec20800000000000000
+      internalID: 3234833734694520692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_13
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 575
+        width: 71
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ff85079fca0713e0800000000000000
+      internalID: -2083184415927332873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_14
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 671
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5342206dffda1500800000000000000
+      internalID: 367852598916694878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_15
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 671
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9f642a62833ddb50800000000000000
+      internalID: 6619503662524034973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_16
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 634
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9b8fb3ba3dc45be0800000000000000
+      internalID: -1489339924745319525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_17
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 632
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc8cf2703004030f0800000000000000
+      internalID: -1139340323975083828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_18
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 593
+        width: 40
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a187cbf0706abda0800000000000000
+      internalID: -5928319921103076959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_19
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 593
+        width: 40
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2f6066261dec8910800000000000000
+      internalID: 1841107027076607791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_20
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 609
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a85443a4316f300800000000000000
+      internalID: 285436835810085460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_21
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 609
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0c243bb06cf6b0c0800000000000000
+      internalID: -4560180080278230004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_22
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 609
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc1884ad5730dca0800000000000000
+      internalID: -5994230228698260238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_23
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 609
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff848dbe627ce0d0800000000000000
+      internalID: -3392210599365275658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 511
+        width: 44
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 147c06a9b5eb3def0800000000000000
+      internalID: -84514667348572351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_25
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 510
+        width: 44
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae7907ce93d2fde0800000000000000
+      internalID: -1300744663459070303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_26
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 509
+        width: 80
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d67007ec40a471b0800000000000000
+      internalID: -5659722579544344878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_27
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 509
+        width: 81
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4641e55a039a23e0800000000000000
+      internalID: -2077686605478279602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_28
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 579
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640b4077ef28a4130800000000000000
+      internalID: 3551795285565157446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_29
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 499
+        width: 35
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa736ce8b6f54ced0800000000000000
+      internalID: -2394684186292766806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_30
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 493
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b17b86efdbbd7e650800000000000000
+      internalID: 6262215415945541403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_31
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 493
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc09518f03f55cd0800000000000000
+      internalID: -2569880764424844033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_32
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 493
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b23bf7f2605591e0800000000000000
+      internalID: -2191757257648426311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_33
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 493
+        width: 41
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68be7a85e75ab4ab0800000000000000
+      internalID: -5022738997329794170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_34
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 490
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9a679fc92be93530800000000000000
+      internalID: 3835355122491681437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_35
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 395
+        width: 75
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2282add9410598b20800000000000000
+      internalID: 3137126664918149154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_36
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 535
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2953906377711d30800000000000000
+      internalID: 4400429648342898988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_37
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 540
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a39c085772ee6e80800000000000000
+      internalID: -8183354470679407704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_38
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 487
+        width: 84
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 899efc10a5374d000800000000000000
+      internalID: 59799525477312920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 383
+        width: 89
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d718ebc88f426c00800000000000000
+      internalID: 892363125127911378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_40
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 383
+        width: 89
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f49667b39d6c635c0800000000000000
+      internalID: -4235979763187553969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_41
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 383
+        width: 89
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bf41e497209d3e70800000000000000
+      internalID: 9096585322034188210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_42
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 431
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1690eb537ba553f0800000000000000
+      internalID: -912634837521623522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_43
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 430
+        width: 39
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4733e394c0ec06cc0800000000000000
+      internalID: -3719746740044287116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_44
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 433
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 080d4caf478b54c10800000000000000
+      internalID: 2037237219017937024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_45
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 429
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d094570eec7025c0800000000000000
+      internalID: -4242253487215963949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_46
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 417
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be920bd44cf226700800000000000000
+      internalID: 532040226146626027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_47
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 434
+        width: 44
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4dcc7530949f860800000000000000
+      internalID: 7564157327852229834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_48
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 433
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee9fbfcf9b901850800000000000000
+      internalID: 6345742985652575981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_49
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 433
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e17487fe4cd1adf0800000000000000
+      internalID: -170613079145156122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_50
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 378
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ea675dba9a2e9dc0800000000000000
+      internalID: -3630417405524088090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_51
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 378
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50b2a58e785060a0800000000000000
+      internalID: -6890410129445703585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_52
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 375
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 272db18b165df9200800000000000000
+      internalID: 189104325050225266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_53
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 373
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 553a62b3fb97077c0800000000000000
+      internalID: -4075623800532196523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_54
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 387
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92c7791adf68635e0800000000000000
+      internalID: -1930206966385771479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_55
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 386
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98bb7cef7a7c06f00800000000000000
+      internalID: 1108105032681110409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_56
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 387
+        width: 19
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42783a3829ec7e870800000000000000
+      internalID: 8712159132840593188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_57
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 383
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdd0747e4bc4a09c0800000000000000
+      internalID: -3960268582460912164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_58
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 387
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 698848cfd3239c3b0800000000000000
+      internalID: -5491803028790671210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 95
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 022bb319d49760c50800000000000000
+      internalID: 6631120875405685280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_60
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 96
+        width: 93
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eb3be4ac0fd0e0c0800000000000000
+      internalID: -4548390378244719641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_61
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 95
+        width: 93
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87083e45602358230800000000000000
+      internalID: 3640370876574302328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_62
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 307
+        width: 26
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e364eaf8719081460800000000000000
+      internalID: 7212524800033310270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_63
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 288
+        width: 47
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a42462e670db07a0800000000000000
+      internalID: -6409800435608836958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_64
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 287
+        width: 50
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc92473cb9f1d2690800000000000000
+      internalID: -7625403840208819761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_65
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 288
+        width: 47
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a3c59a9b8ccf0510800000000000000
+      internalID: 1517656499413173154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_66
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 347
+        width: 69
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f1a35d5a360cb1d0800000000000000
+      internalID: -3333782776417377805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_67
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 270
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3882b132fd3313070800000000000000
+      internalID: 8084299839566456963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_68
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 252
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ab58d9c7d6384740800000000000000
+      internalID: 5136415675448318888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_69
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 276
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b0f67724ad76810800000000000000
+      internalID: 1758614158517930777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_70
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 295
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36bf913541ae136d0800000000000000
+      internalID: -3012369302719693981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_71
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 210
+        width: 33
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0490983f4508e810800000000000000
+      internalID: 1794690289316697100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_72
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 210
+        width: 33
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 627f99810b8151260800000000000000
+      internalID: 7067582334833915686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_73
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 244
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baba36852fc40aa20800000000000000
+      internalID: 3071539549615401899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_74
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 242
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca29f40abd4910a0800000000000000
+      internalID: -6910406691880621372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_75
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 242
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5babb095b2870d330800000000000000
+      internalID: 3733616218663008949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_76
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 248
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c9eb563f6eb71690800000000000000
+      internalID: -7631421658693375552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_77
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 247
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9441c180e7b3acae0800000000000000
+      internalID: -1528343711050886071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_78
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 169
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d35836a769c7de0800000000000000
+      internalID: -1334025937208656637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_79
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 169
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0caf907f353dbf8e0800000000000000
+      internalID: -1658499680175523136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_80
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 191
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e24627e6628db1c0800000000000000
+      internalID: -4486286275314826525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_81
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 204
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97e123a1ee85eead0800000000000000
+      internalID: -2671099749319172487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_82
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 204
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 625518549ec2dbf30800000000000000
+      internalID: 4592876575392879910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_83
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 204
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c9e24317b187ee0800000000000000
+      internalID: -1263229522456699760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_84
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 208
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18f00d8d787f3b940800000000000000
+      internalID: 5310860548430106497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_85
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 97
+        width: 117
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d2e4da4e26add4b0800000000000000
+      internalID: -5413988459275296043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_86
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 144
+        width: 117
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de343a75e4ae48370800000000000000
+      internalID: 8324035633486185453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_87
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 95
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c7fd1c40836c4e0800000000000000
+      internalID: -1961818994589598709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_88
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 143
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01ee063d0e8f69e60800000000000000
+      internalID: 7968830235181379088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_89
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 104
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c540a6a33b92482e0800000000000000
+      internalID: -2124527274456120228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_90
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 95
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3150fd8a8188b2320800000000000000
+      internalID: 2534268854819816723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_91
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 97
+        width: 50
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3430a3874f3c14570800000000000000
+      internalID: 8449249830680265539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_92
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 101
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5051d8a2b68d3850800000000000000
+      internalID: 6358386350811598938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_93
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 102
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6859d975b123fcd0800000000000000
+      internalID: -2525637902707632017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_94
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 51
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 046990c7c12ec1780800000000000000
+      internalID: -8710838967273417152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_95
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 66
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 179db746646e62790800000000000000
+      internalID: -7555098134859490959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_96
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 55
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce6b4bbab0642df60800000000000000
+      internalID: 8057579699258570476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_97
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 63
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03f7132d4453429a0800000000000000
+      internalID: -6258819012437639376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_98
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 56
+        width: 31
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb5b3847ac16506c0800000000000000
+      internalID: -4177825557150190145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_99
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 5
+        width: 27
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c922a3f600f0a9410800000000000000
+      internalID: 1484515521712497308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_100
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 47
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc45c90c041ae370800000000000000
+      internalID: 8352510500848094453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_101
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 49
+        width: 99
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b13fa90e1a373e840800000000000000
+      internalID: 5252168729539310363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_102
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 52
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a52aee786ce1d20800000000000000
+      internalID: 3251254268134578825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_103
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 49
+        width: 85
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e23f3cb98fc7b70d0800000000000000
+      internalID: -3424005684478086354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_104
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 49
+        width: 99
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d8d831141e030f0800000000000000
+      internalID: -1139163036107567723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_105
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 60
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab29a56f64c449580800000000000000
+      internalID: -8821341902447406406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_106
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 54
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39214969db151a440800000000000000
+      internalID: 4945323740546470547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_107
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 54
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00fca824969b8a840800000000000000
+      internalID: 5235638428557299456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_108
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 54
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95fc4ab2e62fc8180800000000000000
+      internalID: -9111641391084810407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_109
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 6
+        width: 37
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff61922619072940800000000000000
+      internalID: 5271191879534342137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_110
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 24
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600c4b6a5fd8dc530800000000000000
+      internalID: 3876910940439232518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_111
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 24
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: badee9e8ed0735790800000000000000
+      internalID: -7542560849737618005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_112
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 24
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb70e18d4b1ba870800000000000000
+      internalID: 8695073525274278833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_113
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 24
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49562de15ee64a5b0800000000000000
+      internalID: -5358035726320376428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_114
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 5
+        width: 50
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4299c668521e340800000000000000
+      internalID: 4891231929578890410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_115
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 5
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ec0f38d2c2fe6a0800000000000000
+      internalID: -6417862369980920265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_116
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 10
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d2399563cc547c0800000000000000
+      internalID: -4087636552965739133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_117
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 3
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f5e2651fb30d7830800000000000000
+      internalID: 4070413757445236211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_118
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 18
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76dd94c80423f8540800000000000000
+      internalID: 5012280163099598183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_119
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 31
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e574306ebaa6690800000000000000
+      internalID: -7608079616103195019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_120
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 20
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62ecb3d6c6f2aaee0800000000000000
+      internalID: -1249133803906281946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_121
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 30
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 166f77676f8351a70800000000000000
+      internalID: 8797000078338815585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_122
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 9
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b0ffb40be82bfa00800000000000000
+      internalID: 791271149395767477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_123
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 11
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f8d04733dc13e170800000000000000
+      internalID: 8206434639489849587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_124
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 7
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a4879da80e5c110800000000000000
+      internalID: 1280676556015421962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_125
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 6
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db3e2ca4b250a5d90800000000000000
+      internalID: -7108363378354887747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_126
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 3
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fb953cf578e82800800000000000000
+      internalID: 587975344812039153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_127
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 11
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f622aca2add59c30800000000000000
+      internalID: 4365639104556312309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_128
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 10
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5497b7dce5c99d60800000000000000
+      internalID: 7897561042592961631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_129
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 5
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb19a3f3288545df0800000000000000
+      internalID: -192431567640292932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hotel_Room_130
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 9
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff50e278bf7c1310800000000000000
+      internalID: 1377116016246546425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hotel_Room_0: -5335678339590713423
+      Hotel_Room_1: 95495352216808019
+      Hotel_Room_10: 5883511185972276245
+      Hotel_Room_100: 8352510500848094453
+      Hotel_Room_101: 5252168729539310363
+      Hotel_Room_102: 3251254268134578825
+      Hotel_Room_103: -3424005684478086354
+      Hotel_Room_104: -1139163036107567723
+      Hotel_Room_105: -8821341902447406406
+      Hotel_Room_106: 4945323740546470547
+      Hotel_Room_107: 5235638428557299456
+      Hotel_Room_108: -9111641391084810407
+      Hotel_Room_109: 5271191879534342137
+      Hotel_Room_11: -6207167233245337911
+      Hotel_Room_110: 3876910940439232518
+      Hotel_Room_111: -7542560849737618005
+      Hotel_Room_112: 8695073525274278833
+      Hotel_Room_113: -5358035726320376428
+      Hotel_Room_114: 4891231929578890410
+      Hotel_Room_115: -6417862369980920265
+      Hotel_Room_116: -4087636552965739133
+      Hotel_Room_117: 4070413757445236211
+      Hotel_Room_118: 5012280163099598183
+      Hotel_Room_119: -7608079616103195019
+      Hotel_Room_12: 3234833734694520692
+      Hotel_Room_120: -1249133803906281946
+      Hotel_Room_121: 8797000078338815585
+      Hotel_Room_122: 791271149395767477
+      Hotel_Room_123: 8206434639489849587
+      Hotel_Room_124: 1280676556015421962
+      Hotel_Room_125: -7108363378354887747
+      Hotel_Room_126: 587975344812039153
+      Hotel_Room_127: 4365639104556312309
+      Hotel_Room_128: 7897561042592961631
+      Hotel_Room_129: -192431567640292932
+      Hotel_Room_13: -2083184415927332873
+      Hotel_Room_130: 1377116016246546425
+      Hotel_Room_14: 367852598916694878
+      Hotel_Room_15: 6619503662524034973
+      Hotel_Room_16: -1489339924745319525
+      Hotel_Room_17: -1139340323975083828
+      Hotel_Room_18: -5928319921103076959
+      Hotel_Room_19: 1841107027076607791
+      Hotel_Room_2: 4861768637407652574
+      Hotel_Room_20: 285436835810085460
+      Hotel_Room_21: -4560180080278230004
+      Hotel_Room_22: -5994230228698260238
+      Hotel_Room_23: -3392210599365275658
+      Hotel_Room_24: -84514667348572351
+      Hotel_Room_25: -1300744663459070303
+      Hotel_Room_26: -5659722579544344878
+      Hotel_Room_27: -2077686605478279602
+      Hotel_Room_28: 3551795285565157446
+      Hotel_Room_29: -2394684186292766806
+      Hotel_Room_3: 3687813707388927318
+      Hotel_Room_30: 6262215415945541403
+      Hotel_Room_31: -2569880764424844033
+      Hotel_Room_32: -2191757257648426311
+      Hotel_Room_33: -5022738997329794170
+      Hotel_Room_34: 3835355122491681437
+      Hotel_Room_35: 3137126664918149154
+      Hotel_Room_36: 4400429648342898988
+      Hotel_Room_37: -8183354470679407704
+      Hotel_Room_38: 59799525477312920
+      Hotel_Room_39: 892363125127911378
+      Hotel_Room_4: -699081078605314636
+      Hotel_Room_40: -4235979763187553969
+      Hotel_Room_41: 9096585322034188210
+      Hotel_Room_42: -912634837521623522
+      Hotel_Room_43: -3719746740044287116
+      Hotel_Room_44: 2037237219017937024
+      Hotel_Room_45: -4242253487215963949
+      Hotel_Room_46: 532040226146626027
+      Hotel_Room_47: 7564157327852229834
+      Hotel_Room_48: 6345742985652575981
+      Hotel_Room_49: -170613079145156122
+      Hotel_Room_5: -7892795037603183655
+      Hotel_Room_50: -3630417405524088090
+      Hotel_Room_51: -6890410129445703585
+      Hotel_Room_52: 189104325050225266
+      Hotel_Room_53: -4075623800532196523
+      Hotel_Room_54: -1930206966385771479
+      Hotel_Room_55: 1108105032681110409
+      Hotel_Room_56: 8712159132840593188
+      Hotel_Room_57: -3960268582460912164
+      Hotel_Room_58: -5491803028790671210
+      Hotel_Room_59: 6631120875405685280
+      Hotel_Room_6: 2040047153484600457
+      Hotel_Room_60: -4548390378244719641
+      Hotel_Room_61: 3640370876574302328
+      Hotel_Room_62: 7212524800033310270
+      Hotel_Room_63: -6409800435608836958
+      Hotel_Room_64: -7625403840208819761
+      Hotel_Room_65: 1517656499413173154
+      Hotel_Room_66: -3333782776417377805
+      Hotel_Room_67: 8084299839566456963
+      Hotel_Room_68: 5136415675448318888
+      Hotel_Room_69: 1758614158517930777
+      Hotel_Room_7: -4123974888202146772
+      Hotel_Room_70: -3012369302719693981
+      Hotel_Room_71: 1794690289316697100
+      Hotel_Room_72: 7067582334833915686
+      Hotel_Room_73: 3071539549615401899
+      Hotel_Room_74: -6910406691880621372
+      Hotel_Room_75: 3733616218663008949
+      Hotel_Room_76: -7631421658693375552
+      Hotel_Room_77: -1528343711050886071
+      Hotel_Room_78: -1334025937208656637
+      Hotel_Room_79: -1658499680175523136
+      Hotel_Room_8: -8936751644377809427
+      Hotel_Room_80: -4486286275314826525
+      Hotel_Room_81: -2671099749319172487
+      Hotel_Room_82: 4592876575392879910
+      Hotel_Room_83: -1263229522456699760
+      Hotel_Room_84: 5310860548430106497
+      Hotel_Room_85: -5413988459275296043
+      Hotel_Room_86: 8324035633486185453
+      Hotel_Room_87: -1961818994589598709
+      Hotel_Room_88: 7968830235181379088
+      Hotel_Room_89: -2124527274456120228
+      Hotel_Room_9: -3271296911807049372
+      Hotel_Room_90: 2534268854819816723
+      Hotel_Room_91: 8449249830680265539
+      Hotel_Room_92: 6358386350811598938
+      Hotel_Room_93: -2525637902707632017
+      Hotel_Room_94: -8710838967273417152
+      Hotel_Room_95: -7555098134859490959
+      Hotel_Room_96: 8057579699258570476
+      Hotel_Room_97: -6258819012437639376
+      Hotel_Room_98: -4177825557150190145
+      Hotel_Room_99: 1484515521712497308
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
