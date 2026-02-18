@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class RoomManager : MonoBehaviour
 {
@@ -50,10 +51,7 @@ public class RoomManager : MonoBehaviour
         
         exitRoomId = n - 1;
 
-        do { keyRoomId = rng.Next(0, n); }
-        while (keyRoomId == 0 || keyRoomId == exitRoomId);
-
-
+        keyRoomId = rng.Next(0, n);
 
         GenerateMapping();
         LoadRoom(0, entryDoorId: 0, useDefaultSpawn: true);
@@ -77,14 +75,36 @@ public class RoomManager : MonoBehaviour
             return;
         }
 
-            doorlockuntil = Time.time + doorCooldown;
+        doorlockuntil = Time.time + doorCooldown;
 
         int nextRoomId = map[currentRoomId, doorId];
-        LoadRoom(nextRoomId, entryDoorId: doorId);
-
+        
         SetAllDoorsBlocking(true); // block all doors during transition
         CancelInvoke(nameof(UnlockDoors));
-        Invoke(nameof(UnlockDoors), doorCooldown); // unlock after cooldown
+        
+        StartCoroutine(TransitionToRoom(nextRoomId, doorId));
+    }
+
+    private IEnumerator TransitionToRoom(int nextRoomId, int entryDoorId)
+    {
+        // Fade out
+        FadeTransitionManager.Instance.FadeOut();
+        // wait for configured fade duration
+        yield return new WaitForSeconds(FadeTransitionManager.Instance.FadeDuration);
+
+        // Load the new room while screen is fully dark
+        LoadRoom(nextRoomId, entryDoorId: entryDoorId);
+
+        // Snap the camera to the new player position to avoid visible camera panning
+        var camFollower = FindObjectOfType<CameraFollow2D>();
+        if (camFollower != null)
+            camFollower.SnapToTarget();
+
+        // Fade in
+        FadeTransitionManager.Instance.FadeIn();
+        yield return new WaitForSeconds(FadeTransitionManager.Instance.FadeDuration);
+
+        Invoke(nameof(UnlockDoors), 0.1f); // unlock after fade completes
     }
 
     private void LoadRoom(int roomId, int entryDoorId, bool useDefaultSpawn = false)
@@ -164,23 +184,15 @@ public class RoomManager : MonoBehaviour
     public void SpawnKeyInCurrentRoom(Vector3 position)
     {
         if (currentRoom == null) return;
-        if (spawnedKey != null || keyAlreadySpawned) return;
+        if (spawnedKey != null || keyAlreadySpawned || keyRoomId!=currentRoomId) return;
         
         spawnedKey = Instantiate(keyPrefab, position, Quaternion.identity);
         keyAlreadySpawned = true;
-        KeyPickup keyPickup = spawnedKey.GetComponent<KeyPickup>();
-        if (keyPickup != null)
-            keyPickup.roomId = currentRoomId;
     }
     
     private void UpdateKeyVisibility(int newRoomId)
     {
         if (spawnedKey == null) return;
-        
-        KeyPickup keyPickup = spawnedKey.GetComponent<KeyPickup>();
-        if (keyPickup != null)
-        {
-            spawnedKey.SetActive(keyPickup.roomId == newRoomId);
-        }
+        spawnedKey.SetActive(keyRoomId == newRoomId);
     }
 }
