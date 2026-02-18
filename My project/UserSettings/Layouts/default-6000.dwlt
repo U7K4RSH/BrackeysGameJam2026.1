@@ -1026,11 +1026,19 @@ MonoBehaviour:
       m_Data: 93526
     m_ExpandedIDs:
     - m_Data: 0
+<<<<<<< Updated upstream
     - m_Data: 64466
     - m_Data: 64468
     - m_Data: 64470
     - m_Data: 64472
     - m_Data: 64474
+=======
+    - m_Data: 65878
+    - m_Data: 65880
+    - m_Data: 65882
+    - m_Data: 65884
+    - m_Data: 65886
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1063,11 +1071,19 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
+<<<<<<< Updated upstream
     - m_Data: 64466
     - m_Data: 64468
     - m_Data: 64470
     - m_Data: 64472
     - m_Data: 64474
+=======
+    - m_Data: 65878
+    - m_Data: 65880
+    - m_Data: 65882
+    - m_Data: 65884
+    - m_Data: 65886
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1876,9 +1892,15 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: -0.5454343, y: 1.3960385, z: 0.050174918}
     speed: 2
     m_Value: {x: -0.95782816, y: -2.0195835, z: 0.0025650216}
+=======
+    m_Target: {x: 0.69488615, y: -1.950796, z: -0.04595791}
+    speed: 2
+    m_Value: {x: 2.0287795, y: 2.1908293, z: -0.01136742}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1928,9 +1950,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< Updated upstream
     m_Target: 4.982355
     speed: 2
     m_Value: 9.70374
+=======
+    m_Target: 14.595645
+    speed: 2
+    m_Value: 14.387864
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 1
     speed: 2

@@ -306,6 +306,7 @@ MonoBehaviour:
   - {fileID: 890850703634790419, guid: 9e8d655e116332d42b17c83d923819be, type: 3}
   - {fileID: 890850703634790419, guid: a35e9ada24ccad94e9eada443fe2f3d0, type: 3}
   - {fileID: 890850703634790419, guid: 479966b9a101c334bb4d494fc1781b44, type: 3}
+  - {fileID: 890850703634790419, guid: 77632247cf3b3714d8a235c146812530, type: 3}
   player: {fileID: 712388699}
   seed: 12345
   doorCooldown: 0.25
