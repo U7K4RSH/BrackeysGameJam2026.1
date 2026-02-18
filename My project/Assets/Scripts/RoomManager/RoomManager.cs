@@ -43,7 +43,7 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
-        rng = new System.Random(seed);
+        rng = new System.Random();
 
         int n = roomPrefabs.Length;
 
