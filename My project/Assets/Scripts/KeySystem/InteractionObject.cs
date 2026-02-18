@@ -35,6 +35,6 @@ public class InteractionObject : MonoBehaviour
     private void SpawnKey()
     {
         Vector3 spawnPosition = transform.position + spawnOffset;
-        Instantiate(keyPrefab, spawnPosition, Quaternion.identity);
+        RoomManager.Instance.SpawnKeyInCurrentRoom(spawnPosition);
     }
 }

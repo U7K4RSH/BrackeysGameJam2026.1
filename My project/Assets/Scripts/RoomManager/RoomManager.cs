@@ -31,6 +31,10 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private float doorCooldown = 2.5f;
 
     [SerializeField] private SimpleHUD hud;
+    
+    private GameObject spawnedKey;
+    private bool keyAlreadySpawned = false;
+    
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -97,6 +101,9 @@ public class RoomManager : MonoBehaviour
 
         Transform spawn = useDefaultSpawn ? currentRoom.playerSpawnDefault : currentRoom.GetEntrySpawn(entryDoorId);
         player.position = spawn.position;
+        
+        // Update key visibility based on current room
+        UpdateKeyVisibility(roomId);
 
         // if (!hasKey && roomId == keyRoomId && keyPrefab != null)
         // {
@@ -152,5 +159,28 @@ public class RoomManager : MonoBehaviour
     {
         hasKey = true;
         Debug.Log("Key collected!");
+    }
+
+    public void SpawnKeyInCurrentRoom(Vector3 position)
+    {
+        if (currentRoom == null) return;
+        if (spawnedKey != null || keyAlreadySpawned) return;
+        
+        spawnedKey = Instantiate(keyPrefab, position, Quaternion.identity);
+        keyAlreadySpawned = true;
+        KeyPickup keyPickup = spawnedKey.GetComponent<KeyPickup>();
+        if (keyPickup != null)
+            keyPickup.roomId = currentRoomId;
+    }
+    
+    private void UpdateKeyVisibility(int newRoomId)
+    {
+        if (spawnedKey == null) return;
+        
+        KeyPickup keyPickup = spawnedKey.GetComponent<KeyPickup>();
+        if (keyPickup != null)
+        {
+            spawnedKey.SetActive(keyPickup.roomId == newRoomId);
+        }
     }
 }
