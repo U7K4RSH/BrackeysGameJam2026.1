@@ -51,10 +51,7 @@ public class RoomManager : MonoBehaviour
         
         exitRoomId = n - 1;
 
-        do { keyRoomId = rng.Next(0, n); }
-        while (keyRoomId == 0 || keyRoomId == exitRoomId);
-
-
+        keyRoomId = rng.Next(0, n);
 
         GenerateMapping();
         LoadRoom(0, entryDoorId: 0, useDefaultSpawn: true);
@@ -187,23 +184,15 @@ public class RoomManager : MonoBehaviour
     public void SpawnKeyInCurrentRoom(Vector3 position)
     {
         if (currentRoom == null) return;
-        if (spawnedKey != null || keyAlreadySpawned) return;
+        if (spawnedKey != null || keyAlreadySpawned || keyRoomId!=currentRoomId) return;
         
         spawnedKey = Instantiate(keyPrefab, position, Quaternion.identity);
         keyAlreadySpawned = true;
-        KeyPickup keyPickup = spawnedKey.GetComponent<KeyPickup>();
-        if (keyPickup != null)
-            keyPickup.roomId = currentRoomId;
     }
     
     private void UpdateKeyVisibility(int newRoomId)
     {
         if (spawnedKey == null) return;
-        
-        KeyPickup keyPickup = spawnedKey.GetComponent<KeyPickup>();
-        if (keyPickup != null)
-        {
-            spawnedKey.SetActive(keyPickup.roomId == newRoomId);
-        }
+        spawnedKey.SetActive(keyRoomId == newRoomId);
     }
 }
