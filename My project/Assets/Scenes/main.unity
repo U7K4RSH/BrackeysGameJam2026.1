@@ -340,8 +340,6 @@ MonoBehaviour:
   roomCounterLabel: {fileID: 1550422355}
   pauseButtonLabel: {fileID: 1260690540}
   winPanel: {fileID: 30843532}
-  restartButton: {fileID: 0}
-  quitButton: {fileID: 0}
 --- !u!1 &661165994
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,8 +875,6 @@ MonoBehaviour:
   roomCounterLabel: {fileID: 1550422355}
   pauseButtonLabel: {fileID: 1260690540}
   winPanel: {fileID: 30843532}
-  restartButton: {fileID: 0}
-  quitButton: {fileID: 0}
 --- !u!1 &940958313
 GameObject:
   m_ObjectHideFlags: 0
