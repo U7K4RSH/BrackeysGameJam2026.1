@@ -52,7 +52,7 @@ public class RoomManager : MonoBehaviour
 
 
         GenerateMapping();
-        LoadRoom(0, entryDoorId: 0);
+        LoadRoom(0, entryDoorId: 0, useDefaultSpawn: true);
     }
 
     public void EnterDoor(int doorId)
@@ -83,7 +83,7 @@ public class RoomManager : MonoBehaviour
         Invoke(nameof(UnlockDoors), doorCooldown); // unlock after cooldown
     }
 
-    private void LoadRoom(int roomId, int entryDoorId)
+    private void LoadRoom(int roomId, int entryDoorId, bool useDefaultSpawn = false)
     {
         if (currentRoom != null)
             Destroy(currentRoom.gameObject);
@@ -95,16 +95,16 @@ public class RoomManager : MonoBehaviour
         
         
 
-        Transform spawn = currentRoom.GetEntrySpawn(entryDoorId);
+        Transform spawn = useDefaultSpawn ? currentRoom.playerSpawnDefault : currentRoom.GetEntrySpawn(entryDoorId);
         player.position = spawn.position;
 
-        if (!hasKey && roomId == keyRoomId && keyPrefab != null)
-        {
-            if (currentRoom.Keyspawn != null)
-                Instantiate(keyPrefab, currentRoom.Keyspawn.position, Quaternion.identity);
-            else
-                Instantiate(keyPrefab, currentRoom.playerSpawnDefault.position, Quaternion.identity);
-        }
+        // if (!hasKey && roomId == keyRoomId && keyPrefab != null)
+        // {
+        //     if (currentRoom.Keyspawn != null)
+        //         Instantiate(keyPrefab, currentRoom.Keyspawn.position, Quaternion.identity);
+        //     else
+        //         Instantiate(keyPrefab, currentRoom.playerSpawnDefault.position, Quaternion.identity);
+        // }
         Debug.Log("LoadRoom called on: " + gameObject.name);
         if (hud != null)
             hud.SetRoomCounter(currentRoomId);
@@ -118,8 +118,6 @@ public class RoomManager : MonoBehaviour
 
         for (int r = 0; r < n; r++)
         {
-
-
             for (int d = 0; d < 4; d++)
             {
                 int next = rng.Next(0, n);
