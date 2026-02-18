@@ -179,6 +179,10 @@ public class RoomManager : MonoBehaviour
     {
         hasKey = true;
         Debug.Log("Key collected!");
+
+
+        if (hud != null)
+            hud.ShowKeyIcon();
     }
 
     public void SpawnKeyInCurrentRoom(Vector3 position)

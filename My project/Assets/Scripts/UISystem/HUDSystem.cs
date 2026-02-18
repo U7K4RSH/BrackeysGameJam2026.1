@@ -8,7 +8,20 @@ public class SimpleHUD : MonoBehaviour
     [SerializeField] private TMP_Text roomCounterLabel; 
     [SerializeField] private TMP_Text pauseButtonLabel;
     [SerializeField] private GameObject winPanel;
+
+    [SerializeField] private GameObject keyIcon;
     private bool isPaused = false;
+
+
+
+    private void Start()
+    {
+        if (keyIcon != null)
+            keyIcon.SetActive(false);
+
+        if (winPanel != null)
+            winPanel.SetActive(false);
+    }
 
     public void TogglePause()
     {
@@ -42,6 +55,20 @@ public class SimpleHUD : MonoBehaviour
             roomCounterLabel.text = $"ROOM {roomId}";
         Debug.Log("Room counter set to: " + roomId);
     }
+
+
+    public void ShowKeyIcon()
+    {
+        if (keyIcon != null)
+            keyIcon.SetActive(true);
+    }
+
+    public void HideKeyIcon()
+    {
+        if (keyIcon != null)
+            keyIcon.SetActive(false);
+    }
+
     public void ShowWin()
     {
         if (winPanel != null)
