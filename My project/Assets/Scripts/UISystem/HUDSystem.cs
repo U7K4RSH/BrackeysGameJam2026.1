@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class SimpleHUD : MonoBehaviour
 {
-    [SerializeField] private TMP_Text roomCounterLabel;
+    [SerializeField] private TMP_Text roomCounterLabel; 
     [SerializeField] private TMP_Text pauseButtonLabel;
     [SerializeField] private GameObject winPanel;
     private bool isPaused = false;

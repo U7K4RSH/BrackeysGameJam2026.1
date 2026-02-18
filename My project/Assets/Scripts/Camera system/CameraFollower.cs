@@ -6,7 +6,7 @@ public class CameraFollow2D: MonoBehaviour
     [SerializeField] private float smoothTime = 0.12f;
 
     private Vector3 velocity;
-    // ye camera ka "smooth movement memory" hai — SmoothDamp isko use karke dheere-dheere follow karata hai
+    // ye camera ka "smooth movement memory" hai ï¿½ SmoothDamp isko use karke dheere-dheere follow karata hai
 
     private void LateUpdate()
     {
@@ -30,5 +30,13 @@ public class CameraFollow2D: MonoBehaviour
 
     // Optional: code se target set karna ho toh ye use karo, laundo.
     public void SetTarget(Transform t) => target = t;
+
+    // Instantly move the camera to the current target position and reset smoothing.
+    public void SnapToTarget()
+    {
+        if (target == null) return;
+        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+        velocity = Vector3.zero;
+    }
 
 }

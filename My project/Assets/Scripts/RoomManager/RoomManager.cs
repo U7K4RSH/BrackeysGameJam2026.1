@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class RoomManager : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private float doorCooldown = 2.5f;
 
     [SerializeField] private SimpleHUD hud;
+    
+    private GameObject spawnedKey;
+    private bool keyAlreadySpawned = false;
+    
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -39,7 +44,7 @@ public class RoomManager : MonoBehaviour
 
     private void Start()
     {
-        rng = new System.Random(seed);
+        rng = new System.Random();
 
         int n = roomPrefabs.Length;
 
@@ -52,7 +57,7 @@ public class RoomManager : MonoBehaviour
 
 
         GenerateMapping();
-        LoadRoom(0, entryDoorId: 0);
+        LoadRoom(0, entryDoorId: 0, useDefaultSpawn: true);
     }
 
     public void EnterDoor(int doorId)
@@ -73,17 +78,39 @@ public class RoomManager : MonoBehaviour
             return;
         }
 
-            doorlockuntil = Time.time + doorCooldown;
+        doorlockuntil = Time.time + doorCooldown;
 
         int nextRoomId = map[currentRoomId, doorId];
-        LoadRoom(nextRoomId, entryDoorId: doorId);
-
+        
         SetAllDoorsBlocking(true); // block all doors during transition
         CancelInvoke(nameof(UnlockDoors));
-        Invoke(nameof(UnlockDoors), doorCooldown); // unlock after cooldown
+        
+        StartCoroutine(TransitionToRoom(nextRoomId, doorId));
     }
 
-    private void LoadRoom(int roomId, int entryDoorId)
+    private IEnumerator TransitionToRoom(int nextRoomId, int entryDoorId)
+    {
+        // Fade out
+        FadeTransitionManager.Instance.FadeOut();
+        // wait for configured fade duration
+        yield return new WaitForSeconds(FadeTransitionManager.Instance.FadeDuration);
+
+        // Load the new room while screen is fully dark
+        LoadRoom(nextRoomId, entryDoorId: entryDoorId);
+
+        // Snap the camera to the new player position to avoid visible camera panning
+        var camFollower = FindObjectOfType<CameraFollow2D>();
+        if (camFollower != null)
+            camFollower.SnapToTarget();
+
+        // Fade in
+        FadeTransitionManager.Instance.FadeIn();
+        yield return new WaitForSeconds(FadeTransitionManager.Instance.FadeDuration);
+
+        Invoke(nameof(UnlockDoors), 0.1f); // unlock after fade completes
+    }
+
+    private void LoadRoom(int roomId, int entryDoorId, bool useDefaultSpawn = false)
     {
         if (currentRoom != null)
             Destroy(currentRoom.gameObject);
@@ -95,16 +122,19 @@ public class RoomManager : MonoBehaviour
         
         
 
-        Transform spawn = currentRoom.GetEntrySpawn(entryDoorId);
+        Transform spawn = useDefaultSpawn ? currentRoom.playerSpawnDefault : currentRoom.GetEntrySpawn(entryDoorId);
         player.position = spawn.position;
+        
+        // Update key visibility based on current room
+        UpdateKeyVisibility(roomId);
 
-        if (!hasKey && roomId == keyRoomId && keyPrefab != null)
-        {
-            if (currentRoom.Keyspawn != null)
-                Instantiate(keyPrefab, currentRoom.Keyspawn.position, Quaternion.identity);
-            else
-                Instantiate(keyPrefab, currentRoom.playerSpawnDefault.position, Quaternion.identity);
-        }
+        // if (!hasKey && roomId == keyRoomId && keyPrefab != null)
+        // {
+        //     if (currentRoom.Keyspawn != null)
+        //         Instantiate(keyPrefab, currentRoom.Keyspawn.position, Quaternion.identity);
+        //     else
+        //         Instantiate(keyPrefab, currentRoom.playerSpawnDefault.position, Quaternion.identity);
+        // }
         Debug.Log("LoadRoom called on: " + gameObject.name);
         if (hud != null)
             hud.SetRoomCounter(currentRoomId);
@@ -118,8 +148,6 @@ public class RoomManager : MonoBehaviour
 
         for (int r = 0; r < n; r++)
         {
-
-
             for (int d = 0; d < 4; d++)
             {
                 int next = rng.Next(0, n);
@@ -154,5 +182,28 @@ public class RoomManager : MonoBehaviour
     {
         hasKey = true;
         Debug.Log("Key collected!");
+    }
+
+    public void SpawnKeyInCurrentRoom(Vector3 position)
+    {
+        if (currentRoom == null) return;
+        if (spawnedKey != null || keyAlreadySpawned) return;
+        
+        spawnedKey = Instantiate(keyPrefab, position, Quaternion.identity);
+        keyAlreadySpawned = true;
+        KeyPickup keyPickup = spawnedKey.GetComponent<KeyPickup>();
+        if (keyPickup != null)
+            keyPickup.roomId = currentRoomId;
+    }
+    
+    private void UpdateKeyVisibility(int newRoomId)
+    {
+        if (spawnedKey == null) return;
+        
+        KeyPickup keyPickup = spawnedKey.GetComponent<KeyPickup>();
+        if (keyPickup != null)
+        {
+            spawnedKey.SetActive(keyPickup.roomId == newRoomId);
+        }
     }
 }
