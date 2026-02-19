@@ -11,6 +11,13 @@ public class RoomManager : MonoBehaviour
     [Header("Key Halves")]
     [SerializeField] private GameObject keyHalfAPrefab;
     [SerializeField] private GameObject keyHalfBPrefab;
+
+    [Header("Hint / Paper")]
+    [SerializeField] private GameObject hintPrefab;
+    // When true, the next room loaded will receive the hint paper
+    private bool spawnHintNextRoom = false;
+    private GameObject spawnedHint;
+    private bool hintAlreadySpawned = false;
    
     //private int keyRoomId;
     private int halfARoomId;
@@ -90,6 +97,21 @@ public class RoomManager : MonoBehaviour
 
         GenerateMapping();
         LoadRoom(0, entryDoorId: 0, useDefaultSpawn: true);
+
+        // Schedule a hint to appear in the next room entered after 30s
+        Invoke(nameof(EnableHintNextRoomFlag), 30f);
+    }
+
+    private void EnableHintNextRoomFlag()
+    {
+        spawnHintNextRoom = true;
+        Debug.Log("Hint scheduled: will spawn in the next room the player enters.");
+    }
+
+    // Public manual trigger (if needed elsewhere)
+    public void TriggerHintNextRoom()
+    {
+        spawnHintNextRoom = true;
     }
 
     public void EnterDoor(int doorId)
@@ -159,6 +181,17 @@ public class RoomManager : MonoBehaviour
         
         // Update key visibility based on current room
         UpdateKeyVisibility(roomId);
+
+        // If a hint was scheduled, spawn the hint prefab in this room (once)
+        if (spawnHintNextRoom && hintPrefab != null && !hintAlreadySpawned)
+        {
+            Transform hintSpawn = currentRoom.Keyspawn != null ? currentRoom.Keyspawn : currentRoom.playerSpawnDefault;
+            Vector3 pos = hintSpawn != null ? hintSpawn.position : player.position;
+            spawnedHint = Instantiate(hintPrefab, pos, Quaternion.identity);
+            hintAlreadySpawned = true;
+            spawnHintNextRoom = false;
+            Debug.Log("Spawned hint paper in room " + currentRoomId);
+        }
 
         // if (!hasKey && roomId == keyRoomId && keyPrefab != null)
         // {
