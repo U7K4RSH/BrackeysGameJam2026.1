@@ -101,12 +101,12 @@ public class RoomManager : MonoBehaviour
         {
             if (!(hasHalfA && hasHalfB))
             {
-                Debug.Log("Exit is locked. Need both key halves.");
+                if (hud != null) hud.ShowDialogue("Exit is locked. Need both key halves.");
                 return;
             }
             hud.ShowWin();
-            Debug.Log("YOU WIN!");
             
+
             return;
         }
 
@@ -228,7 +228,7 @@ public class RoomManager : MonoBehaviour
         if (hud != null) hud.ShowHalfAIcon();
         if (hasHalfA && hasHalfB && hud != null)
             hud.ShowFullKeyIcon();
-        Debug.Log("Half A collected!");
+        if (hud != null) hud.ShowDialogue("Half A collected!");
     }
 
     public void CollectHalfB()
@@ -237,7 +237,7 @@ public class RoomManager : MonoBehaviour
         if (hud != null) hud.ShowHalfBIcon();
         if (hasHalfA && hasHalfB && hud != null)
             hud.ShowFullKeyIcon();
-        Debug.Log("Half B collected!");
+        if (hud != null) hud.ShowDialogue("Half B collected!");
     }
 
     /*
@@ -251,24 +251,26 @@ public class RoomManager : MonoBehaviour
     }
     */
 
-    public void SpawnHalfAInCurrentRoom(Vector3 position)
+    public bool SpawnHalfAInCurrentRoom(Vector3 position)
     {
-        if (currentRoom == null) return;
-        if (spawnedHalfA != null || halfAAlreadySpawned) return;
-        if (currentRoomId != halfARoomId) return;
+        if (currentRoom == null) return false;
+        if (spawnedHalfA != null || halfAAlreadySpawned) return false;
+        if (currentRoomId != halfARoomId) return false;
 
         spawnedHalfA = Instantiate(keyHalfAPrefab, position, Quaternion.identity);
         halfAAlreadySpawned = true;
+        return true;
     }
 
-    public void SpawnHalfBInCurrentRoom(Vector3 position)
+    public bool SpawnHalfBInCurrentRoom(Vector3 position)
     {
-        if (currentRoom == null) return;
-        if (spawnedHalfB != null || halfBAlreadySpawned) return;
-        if (currentRoomId != halfBRoomId) return;
+        if (currentRoom == null) return false;
+        if (spawnedHalfB != null || halfBAlreadySpawned) return false;
+        if (currentRoomId != halfBRoomId) return false;
 
         spawnedHalfB = Instantiate(keyHalfBPrefab, position, Quaternion.identity);
         halfBAlreadySpawned = true;
+        return true;
     }
 
     private void UpdateKeyVisibility(int newRoomId)

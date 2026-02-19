@@ -61,10 +61,18 @@ public class InteractionObject : MonoBehaviour
 
         Vector3 spawnPosition = transform.position + spawnOffset;
 
+        bool spawned = false;
+
         if (spawnsHalfA)
-            RoomManager.Instance.SpawnHalfAInCurrentRoom(spawnPosition);
+            spawned = RoomManager.Instance.SpawnHalfAInCurrentRoom(spawnPosition);
         else
-            RoomManager.Instance.SpawnHalfBInCurrentRoom(spawnPosition);
+            spawned = RoomManager.Instance.SpawnHalfBInCurrentRoom(spawnPosition);
+
+        if (RoomManager.Instance != null)
+        {
+            if (spawned) SimpleHUD.Instance.ShowDialogue("You found a key piece!");
+            else SimpleHUD.Instance.ShowDialogue("You searched... but found nothing.");
+        }
     }
 
     private string GetInteractId()
