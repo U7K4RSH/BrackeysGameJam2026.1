@@ -9,18 +9,20 @@ public class SimpleHUD : MonoBehaviour
     [SerializeField] private TMP_Text pauseButtonLabel;
     [SerializeField] private GameObject winPanel;
 
+    
     [SerializeField] private GameObject keyIcon;
+    [SerializeField] private GameObject keyHalfAIcon;
+    [SerializeField] private GameObject keyHalfBIcon;
+
     private bool isPaused = false;
 
 
 
     private void Start()
     {
-        if (keyIcon != null)
-            keyIcon.SetActive(false);
-
-        if (winPanel != null)
-            winPanel.SetActive(false);
+        if (keyIcon != null) keyIcon.SetActive(false);
+        if (keyHalfAIcon != null) keyHalfAIcon.SetActive(false);
+        if (keyHalfBIcon != null) keyHalfBIcon.SetActive(false);
     }
 
     public void TogglePause()
@@ -57,10 +59,26 @@ public class SimpleHUD : MonoBehaviour
     }
 
 
-    public void ShowKeyIcon()
+    public void ShowFullKeyIcon()
     {
         if (keyIcon != null)
             keyIcon.SetActive(true);
+
+        // Optional: hide halves once complete
+        if (keyHalfAIcon != null) keyHalfAIcon.SetActive(false);
+        if (keyHalfBIcon != null) keyHalfBIcon.SetActive(false);
+    }
+
+    public void ShowHalfAIcon()
+    {
+        if (keyHalfAIcon != null)
+            keyHalfAIcon.SetActive(true);
+    }
+
+    public void ShowHalfBIcon()
+    {
+        if (keyHalfBIcon != null)
+            keyHalfBIcon.SetActive(true);
     }
 
     public void HideKeyIcon()

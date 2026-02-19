@@ -1,17 +1,40 @@
-using UnityEngine;
 using System.Collections;
+//using System.Diagnostics;
+using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
 
-    [Header("Win / Key")]
-    [SerializeField] private GameObject keyPrefab;   
-    [SerializeField] private int exitDoorId = 3;     
+    //[Header("Win / Key")]
+    //[SerializeField] private GameObject keyPrefab;
 
-    private int exitRoomId;      
-    private int keyRoomId;      
-    private bool hasKey = false;
+    [Header("Key Halves")]
+    [SerializeField] private GameObject keyHalfAPrefab;
+    [SerializeField] private GameObject keyHalfBPrefab;
+   
+    //private int keyRoomId;
+    private int halfARoomId;
+    private int halfBRoomId;
 
+    //private bool hasKey = false;
+    private bool hasHalfA = false;
+    private bool hasHalfB = false;
+
+    //private GameObject spawnedKey;
+    private GameObject spawnedHalfA;
+    private GameObject spawnedHalfB;
+
+    //private bool keyAlreadySpawned = false;
+    private bool halfAAlreadySpawned = false;
+    private bool halfBAlreadySpawned = false;
+
+
+    [SerializeField] private int exitDoorId = 3;
+   
+
+    private int exitRoomId;
+
+    //private bool blackoutActive = false;
     public static RoomManager Instance { get; private set; }
 
     [Header("Room prefabs (index = roomId)")]
@@ -32,10 +55,14 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private float doorCooldown = 2.5f;
 
     [SerializeField] private SimpleHUD hud;
-    
-    private GameObject spawnedKey;
-    private bool keyAlreadySpawned = false;
-    
+
+    private readonly System.Collections.Generic.HashSet<string> usedInteractables
+    = new System.Collections.Generic.HashSet<string>();
+
+    public int GetCurrentRoomId() => currentRoomId;
+
+    //private bool keyAlreadySpawned = false;
+
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -51,7 +78,15 @@ public class RoomManager : MonoBehaviour
         
         exitRoomId = n - 1;
 
-        keyRoomId = rng.Next(0, n);
+        halfARoomId = rng.Next(0, n);
+
+        // forcing half b to be different if possible, to ensure they are not in the same room
+        if (n <= 1) halfBRoomId = halfARoomId;
+        else
+        {
+            do { halfBRoomId = rng.Next(0, n); }
+            while (halfBRoomId == halfARoomId);
+        }
 
         GenerateMapping();
         LoadRoom(0, entryDoorId: 0, useDefaultSpawn: true);
@@ -64,9 +99,9 @@ public class RoomManager : MonoBehaviour
 
         if (currentRoomId == exitRoomId && doorId == exitDoorId)
         {
-            if (!hasKey)
+            if (!(hasHalfA && hasHalfB))
             {
-                Debug.Log("Exit is locked. Need the key.");
+                Debug.Log("Exit is locked. Need both key halves.");
                 return;
             }
             hud.ShowWin();
@@ -175,7 +210,8 @@ public class RoomManager : MonoBehaviour
     SetAllDoorsBlocking(false);
     }
 
-    public void CollectKey()
+    /*
+       public void CollectKey()
     {
         hasKey = true;
         Debug.Log("Key collected!");
@@ -184,8 +220,28 @@ public class RoomManager : MonoBehaviour
         if (hud != null)
             hud.ShowKeyIcon();
     }
+    */
 
-    public void SpawnKeyInCurrentRoom(Vector3 position)
+    public void CollectHalfA()
+    {
+        hasHalfA = true;
+        if (hud != null) hud.ShowHalfAIcon();
+        if (hasHalfA && hasHalfB && hud != null)
+            hud.ShowFullKeyIcon();
+        Debug.Log("Half A collected!");
+    }
+
+    public void CollectHalfB()
+    {
+        hasHalfB = true;
+        if (hud != null) hud.ShowHalfBIcon();
+        if (hasHalfA && hasHalfB && hud != null)
+            hud.ShowFullKeyIcon();
+        Debug.Log("Half B collected!");
+    }
+
+    /*
+       public void SpawnKeyInCurrentRoom(Vector3 position)
     {
         if (currentRoom == null) return;
         if (spawnedKey != null || keyAlreadySpawned || keyRoomId!=currentRoomId) return;
@@ -193,10 +249,49 @@ public class RoomManager : MonoBehaviour
         spawnedKey = Instantiate(keyPrefab, position, Quaternion.identity);
         keyAlreadySpawned = true;
     }
-    
+    */
+
+    public void SpawnHalfAInCurrentRoom(Vector3 position)
+    {
+        if (currentRoom == null) return;
+        if (spawnedHalfA != null || halfAAlreadySpawned) return;
+        if (currentRoomId != halfARoomId) return;
+
+        spawnedHalfA = Instantiate(keyHalfAPrefab, position, Quaternion.identity);
+        halfAAlreadySpawned = true;
+    }
+
+    public void SpawnHalfBInCurrentRoom(Vector3 position)
+    {
+        if (currentRoom == null) return;
+        if (spawnedHalfB != null || halfBAlreadySpawned) return;
+        if (currentRoomId != halfBRoomId) return;
+
+        spawnedHalfB = Instantiate(keyHalfBPrefab, position, Quaternion.identity);
+        halfBAlreadySpawned = true;
+    }
+
     private void UpdateKeyVisibility(int newRoomId)
     {
-        if (spawnedKey == null) return;
+        /*
+         if (spawnedKey == null) return;
         spawnedKey.SetActive(keyRoomId == newRoomId);
+        */
+        if (spawnedHalfA != null)
+            spawnedHalfA.SetActive(halfARoomId == newRoomId);
+
+        if (spawnedHalfB != null)
+            spawnedHalfB.SetActive(halfBRoomId == newRoomId);
     }
+
+    public bool IsInteractableUsed(int roomId, string interactId)
+    {
+        return usedInteractables.Contains($"{roomId}:{interactId}");
+    }
+
+    public void MarkInteractableUsed(int roomId, string interactId)
+    {
+        usedInteractables.Add($"{roomId}:{interactId}");
+    }
+
 }

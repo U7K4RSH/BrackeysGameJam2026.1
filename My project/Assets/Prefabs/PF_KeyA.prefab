@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3236104192899993591}
   - component: {fileID: 7715481086690323239}
   m_Layer: 0
-  m_Name: PF_Key
+  m_Name: PF_KeyA
   m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 2729052049100814800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.53036, y: 1.1757, z: 0}
-  m_LocalScale: {x: 0.056480672, y: 0.060010713, z: 0.056480672}
+  m_LocalPosition: {x: -0.5264, y: 1.2096, z: 0}
+  m_LocalScale: {x: 0.05674613, y: 0.05775431, z: 0.056480672}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,12 +83,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 70
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 1a384169e5f89694c851bcfebe79c53a, type: 3}
+  m_Sprite: {fileID: 1301345699513158698, guid: 1a384169e5f89694c851bcfebe79c53a, type: 3}
   m_Color: {r: 1, g: 0.88976, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 30.000002, y: 15.000001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -130,9 +130,9 @@ BoxCollider2D:
   m_Offset: {x: 0.083876014, y: 0.052627563}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 30.000002, y: 30.000002}
-    newSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 1}
+    oldSize: {x: 30.000002, y: 15.000001}
+    newSize: {x: 30.000002, y: 15.000001}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -151,3 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed8cb3226b18574a8999ad408823abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyPickup
+  isHalfA: 1

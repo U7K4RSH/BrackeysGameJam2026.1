@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1a384169e5f89694c851bcfebe79c53a
+guid: 5136feafbe822b34f8e5d634f6afe527
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1301345699513158698
-    second: "\u2014Pngtree\u2014pixel art vintage key graphic_21136650_0"
+      213: 1227121485942017378
+    second: "\u2014Pngtree\u2014pixel art vintage key graphic_21136650 1_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,45 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u2014Pngtree\u2014pixel art vintage key graphic_21136650_0"
+      name: "\u2014Pngtree\u2014pixel art vintage key graphic_21136650 1_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1500
-        width: 3000
-        height: 1500
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 1087
+        y: 440
+        width: 826
+        height: 2120
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2cc675d40f4f0210800000000000000
-      internalID: 1301345699513158698
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u2014Pngtree\u2014pixel art vintage key graphic_21136650_1"
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3000
-        height: 1500
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06168df43b07923449b85caa3d50d2f2
-      internalID: -278466156
+      spriteID: 26dc2d96d7c970110800000000000000
+      internalID: 1227121485942017378
       vertices: []
       indices: 
       edges: []
@@ -147,20 +125,17 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":2.0},"gridSpriteSize":{"x":3000.0,"y":1500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":1.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":2,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      "\u2014Pngtree\u2014pixel art vintage key graphic_21136650_0": 1301345699513158698
-      "\u2014Pngtree\u2014pixel art vintage key graphic_21136650_1": -278466156
+      "\u2014Pngtree\u2014pixel art vintage key graphic_21136650 1_0": 1227121485942017378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
