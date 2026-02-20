@@ -274,19 +274,21 @@ public class RoomManager : MonoBehaviour
     {
         int n = roomPrefabs.Length;
         map = new int[n, 4];
-
         for (int r = 0; r < n; r++)
         {
             for (int d = 0; d < 4; d++)
             {
                 int next = rng.Next(0, n);
-
                 if (n > 1 && next == r)
                 {
                     next = (r + rng.Next(1, n)) % n; 
                 }
                 map[r, d] = next;
             }
+        }
+        for (int r = 0; r < n; r++)
+        {
+            map[r, rng.Next(0, n)] = (r+1)%n;
         }
         
         if (n > 1 && map[0, 0] == 0) map[0, 0] = 1;
