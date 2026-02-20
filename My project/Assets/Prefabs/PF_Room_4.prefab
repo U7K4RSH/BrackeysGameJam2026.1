@@ -6681,13 +6681,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionObject
   keyPrefab: {fileID: 2729052049100814800, guid: 5ba025cfe3b7e0041bdb766202d7b3a1, type: 3}
   spawnOffset: {x: 0, y: -4, z: 0}
+  spawnsMiniGame: 0
+  miniGamePrefab: {fileID: 0}
   spawnsHalfA: 1
   glintObject: {fileID: 690086882488071843}
   searchClip: {fileID: 8300000, guid: 0740bb86da6c21b46b657da7c1c269c9, type: 3}
   searchVolume: 0.8
   sfxSource: {fileID: 2778561575092286206}
-  nothingFoundClip: {fileID: 0}
-  keyFoundClip: {fileID: 0}
+  nothingFoundClip: {fileID: 8300000, guid: 83324c1afab489d469830a3f0b19a256, type: 3}
+  keyFoundClip: {fileID: 8300000, guid: f2cb7fb63d79ce14e9e767f3c6eb4309, type: 3}
   resultVolume: 0.9
   interactIdOverride: 
 --- !u!82 &2778561575092286206
@@ -7176,6 +7178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionObject
   keyPrefab: {fileID: 2729052049100814800, guid: f50ef545a0ad1eb459a93a68eaf84d93, type: 3}
   spawnOffset: {x: 0, y: -5, z: 0}
+  spawnsMiniGame: 0
+  miniGamePrefab: {fileID: 0}
   spawnsHalfA: 0
   glintObject: {fileID: 8460227466287392964}
   searchClip: {fileID: 8300000, guid: 0740bb86da6c21b46b657da7c1c269c9, type: 3}

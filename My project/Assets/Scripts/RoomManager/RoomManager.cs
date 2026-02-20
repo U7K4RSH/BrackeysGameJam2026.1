@@ -1,6 +1,7 @@
 using System.Collections;
 //using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class RoomManager : MonoBehaviour
 {
@@ -26,6 +27,12 @@ public class RoomManager : MonoBehaviour
     [Header("Hint / Paper")]
     [SerializeField] private GameObject hintPrefab;
 
+    [Header("Audio - Doors")]
+    [SerializeField] private AudioClip doorOpenClip;
+    [SerializeField] private AudioClip doorLockedClip;
+    [SerializeField, Range(0f, 1f)] private float doorVolume = 0.8f;
+    [SerializeField] private AudioSource doorSfxSource;
+
     // When true, the next room loaded will receive the hint paper
     private bool spawnHintNextRoom = false;
     private GameObject spawnedHint;
@@ -50,6 +57,13 @@ public class RoomManager : MonoBehaviour
     public SimpleHUD GetHUD() => hud;
 
     private int exitRoomId;
+    // whether the exit room lights should be off until re-enabled
+    private bool exitRoomLightsOff = false;
+    // store original intensities for global lights in the currently loaded exit room
+    private System.Collections.Generic.Dictionary<Light2D, float> exitRoomOriginalIntensities = new System.Collections.Generic.Dictionary<Light2D, float>();
+    // store original rotation for the exit room so we can restore after flipping
+    private Quaternion exitRoomOriginalRotation = Quaternion.identity;
+    private bool exitRoomOriginalRotationStored = false;
 
     //private bool blackoutActive = false;
     public static RoomManager Instance { get; private set; }
@@ -79,6 +93,8 @@ public class RoomManager : MonoBehaviour
 
     public int GetCurrentRoomId() => currentRoomId;
 
+    // Returns true when both key halves have been collected
+    public bool HasBothHalves() => hasHalfA && hasHalfB;
     //private bool keyAlreadySpawned = false;
 
     private void Awake()
@@ -87,6 +103,8 @@ public class RoomManager : MonoBehaviour
         Instance = this;
         if (keySfxSource == null)
             keySfxSource = GetComponent<AudioSource>();
+        if(doorSfxSource == null)
+    doorSfxSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -118,7 +136,7 @@ public class RoomManager : MonoBehaviour
     private void EnableHintNextRoomFlag()
     {
         spawnHintNextRoom = true;
-        Debug.Log("Hint scheduled: will spawn in the next room the player enters.");
+        
     }
 
     // Public manual trigger (if needed elsewhere)
@@ -129,29 +147,51 @@ public class RoomManager : MonoBehaviour
 
     public void EnterDoor(int doorId)
     {
-        if (Time.time < doorlockuntil) return; 
+        if (Time.time < doorlockuntil) return;
         if (currentRoom == null) return;
 
+        // EXIT door check
         if (currentRoomId == exitRoomId && doorId == exitDoorId)
         {
-            if (!(hasHalfA && hasHalfB))
+            // blocked if exit-room lights are off
+            if (exitRoomLightsOff)
             {
-                if (hud != null) hud.ShowDialogue("Exit is locked. Need both key halves.");
+                if (doorSfxSource != null && doorLockedClip != null)
+                    doorSfxSource.PlayOneShot(doorLockedClip, doorVolume);
+
+                if (hud != null) hud.ShowDialogue("Exit is sealed while lights are off.");
                 return;
             }
-            hud.ShowWin();
-            
 
+            if (!(hasHalfA && hasHalfB))
+            {
+                // play LOCKED sound
+                if (doorSfxSource != null && doorLockedClip != null)
+                    doorSfxSource.PlayOneShot(doorLockedClip, doorVolume);
+
+                if (hud != null) hud.ShowDialogue("It seems like this exit is locked.");
+                return;
+            }
+
+            // play OPEN sound (you are allowed to exit)
+            if (doorSfxSource != null && doorOpenClip != null)
+                doorSfxSource.PlayOneShot(doorOpenClip, doorVolume);
+
+            hud.ShowWin();
             return;
         }
+
+        // normal doors: play OPEN sound
+        if (doorSfxSource != null && doorOpenClip != null)
+            doorSfxSource.PlayOneShot(doorOpenClip, doorVolume);
 
         doorlockuntil = Time.time + doorCooldown;
 
         int nextRoomId = map[currentRoomId, doorId];
-        
-        SetAllDoorsBlocking(true); // block all doors during transition
+
+        SetAllDoorsBlocking(true);
         CancelInvoke(nameof(UnlockDoors));
-        
+
         StartCoroutine(TransitionToRoom(nextRoomId, doorId));
     }
 
@@ -166,7 +206,7 @@ public class RoomManager : MonoBehaviour
         LoadRoom(nextRoomId, entryDoorId: entryDoorId);
 
         // Snap the camera to the new player position to avoid visible camera panning
-        var camFollower = FindObjectOfType<CameraFollow2D>();
+        var camFollower = CameraFollow2D.FindAnyObjectByType<CameraFollow2D>();
         if (camFollower != null)
             camFollower.SnapToTarget();
 
@@ -180,7 +220,12 @@ public class RoomManager : MonoBehaviour
     private void LoadRoom(int roomId, int entryDoorId, bool useDefaultSpawn = false)
     {
         if (currentRoom != null)
+        {
             Destroy(currentRoom.gameObject);
+            // previous room destroyed: clear any stored values that referenced it
+            exitRoomOriginalIntensities.Clear();
+            exitRoomOriginalRotationStored = false;
+        }
 
         GameObject roomGO = Instantiate(roomPrefabs[roomId]);
         currentRoom = roomGO.GetComponent<RoomDefinition>();
@@ -195,6 +240,8 @@ public class RoomManager : MonoBehaviour
         // Update key visibility based on current room
         UpdateKeyVisibility(roomId);
 
+        ApplyExitRoomLightsState();
+
         // If a hint was scheduled, spawn the hint prefab in this room (once)
         if (spawnHintNextRoom && hintPrefab != null && !hintAlreadySpawned)
         {
@@ -203,7 +250,7 @@ public class RoomManager : MonoBehaviour
             spawnedHint = Instantiate(hintPrefab, pos, Quaternion.identity);
             hintAlreadySpawned = true;
             spawnHintNextRoom = false;
-            Debug.Log("Spawned hint paper in room " + currentRoomId);
+           
         }
 
         // if (!hasKey && roomId == keyRoomId && keyPrefab != null)
@@ -213,10 +260,10 @@ public class RoomManager : MonoBehaviour
         //     else
         //         Instantiate(keyPrefab, currentRoom.playerSpawnDefault.position, Quaternion.identity);
         // }
-        Debug.Log("LoadRoom called on: " + gameObject.name);
+       
         if (hud != null)
             hud.SetRoomCounter(currentRoomId);
-        Debug.Log("HUD is assigned: " + hud.gameObject.name);
+        
     }
 
     private void GenerateMapping()
@@ -278,7 +325,18 @@ public class RoomManager : MonoBehaviour
         if (hud != null) hud.ShowHalfAIcon();
         if (hasHalfA && hasHalfB && hud != null)
             hud.ShowFullKeyIcon();
-        if (hud != null) hud.ShowDialogue("Half A collected!");
+        if (hud != null) hud.ShowDialogue("Looks like an upper key half..");
+
+        if (hasHalfA && hasHalfB)
+        {
+
+            CameraShake2D.Instance?.Shake(0.25f, 0.12f);
+            // Both halves collected: turn off lights in exit room until mini-game is won
+            SetExitRoomLightsEnabled(false);
+            
+
+        }
+
     }
 
     public void CollectHalfB()
@@ -291,7 +349,16 @@ public class RoomManager : MonoBehaviour
         if (hud != null) hud.ShowHalfBIcon();
         if (hasHalfA && hasHalfB && hud != null)
             hud.ShowFullKeyIcon();
-        if (hud != null) hud.ShowDialogue("Half B collected!");
+        if (hud != null) hud.ShowDialogue("Looks like a lower key half");
+
+        if (hasHalfA && hasHalfB)
+        {
+
+            CameraShake2D.Instance?.Shake(0.25f, 0.12f);
+            // Both halves collected: turn off lights in exit room until mini-game is won
+            SetExitRoomLightsEnabled(false);
+          
+        }
     }
 
     /*
@@ -348,6 +415,58 @@ public class RoomManager : MonoBehaviour
     public void MarkInteractableUsed(int roomId, string interactId)
     {
         usedInteractables.Add($"{roomId}:{interactId}");
+    }
+
+    public void SetExitRoomLightsEnabled(bool enabled)
+    {
+        exitRoomLightsOff = !enabled;
+        ApplyExitRoomLightsState();
+    }
+
+    private void ApplyExitRoomLightsState()
+    {
+        if (currentRoom == null) return;
+
+        // Flip or restore the room rotation when exit-room lights are toggled
+        if (currentRoomId == exitRoomId)
+        {
+            if (exitRoomLightsOff)
+            {
+                if (!exitRoomOriginalRotationStored)
+                {
+                    exitRoomOriginalRotation = currentRoom.transform.rotation;
+                    exitRoomOriginalRotationStored = true;
+                }
+                currentRoom.transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+            }
+            else
+            {
+                if (exitRoomOriginalRotationStored)
+                {
+                    currentRoom.transform.rotation = exitRoomOriginalRotation;
+                    exitRoomOriginalRotationStored = false;
+                }
+            }
+        }
+
+        // Adjust player's personal Light2D intensity depending on room
+        if (player != null)
+        {
+            var pLight = player.GetComponentInChildren<Light2D>(true);
+            if (pLight != null)
+            {
+                float targetIntensity = (currentRoomId == exitRoomId && exitRoomLightsOff) ? 0f : 0.35f;
+                pLight.intensity = targetIntensity;
+            }
+
+            // Inform player movement to invert controls when exit-room lights are turned off
+            var pm = player.GetComponent<PlayerMovement>();
+            if (pm != null)
+            {
+                bool invert = (currentRoomId == exitRoomId && exitRoomLightsOff);
+                pm.SetInverted(invert);
+            }
+        }
     }
 
 }

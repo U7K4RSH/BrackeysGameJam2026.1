@@ -34,9 +34,6 @@ public class DoorTriggers : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        if (doorClip != null)
-            audioSource.PlayOneShot(doorClip, volume);
-
         RoomManager.Instance.EnterDoor(doorId);
     }
 }

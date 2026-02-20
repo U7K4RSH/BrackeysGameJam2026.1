@@ -300,5 +300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9333d352ef6be704194094c8a8c0388a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HintNotePickup
-  message: Check Objects with a glints. You need both key halves, and reach the sofaRoom
+  message: Someone left a note here, - 'Check cabinets with a glint. You need both
+    key halves.'
   showSeconds: 6
+  pickupClip: {fileID: 8300000, guid: 68e7bca1096279243b82b24034789b1b, type: 3}
+  pickupVolume: 0.9
