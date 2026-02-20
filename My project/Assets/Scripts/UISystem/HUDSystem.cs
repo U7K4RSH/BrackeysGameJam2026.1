@@ -1,7 +1,9 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using System.Collections;
 
 public class SimpleHUD : MonoBehaviour
 {
@@ -16,13 +18,25 @@ public class SimpleHUD : MonoBehaviour
 
     private bool isPaused = false;
 
+    [Header("Dialogue")]
+    [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private float dialogueAutoHideSeconds = 2.5f;
 
+    private Coroutine dialogueRoutine;
+    public static SimpleHUD Instance { get; private set; }
 
+    private void Awake()
+    {
+        
+        Instance = this;
+    }
     private void Start()
     {
         if (keyIcon != null) keyIcon.SetActive(false);
         if (keyHalfAIcon != null) keyHalfAIcon.SetActive(false);
         if (keyHalfBIcon != null) keyHalfBIcon.SetActive(false);
+        if (dialoguePanel != null) dialoguePanel.SetActive(false);
     }
 
     public void TogglePause()
@@ -92,6 +106,28 @@ public class SimpleHUD : MonoBehaviour
         if (winPanel != null)
             winPanel.SetActive(true);
 
+        if(MusicPlayer.Instance != null)
+            MusicPlayer.Instance.PlayWinLoop();
+
         Time.timeScale = 0f;
+    }
+
+    public void ShowDialogue(string message, float? seconds = null)
+    {
+        if (dialoguePanel == null || dialogueText == null) return;
+
+        dialoguePanel.SetActive(true);
+        dialogueText.text = message;
+
+        if (dialogueRoutine != null) StopCoroutine(dialogueRoutine);
+
+        float t = seconds ?? dialogueAutoHideSeconds;
+        dialogueRoutine = StartCoroutine(HideDialogueAfter(t));
+    }
+
+    private IEnumerator HideDialogueAfter(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if (dialoguePanel != null) dialoguePanel.SetActive(false);
     }
 }
