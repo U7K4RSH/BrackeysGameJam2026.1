@@ -4,9 +4,13 @@ using UnityEngine.InputSystem;
 public class HintNotePickup : MonoBehaviour
 {
     [TextArea(2, 6)]
-    [SerializeField] private string message = "Check cabinets with a glint. You need both key halves.";
+    [SerializeField] private string message = "Someone left a note here, - 'Check cabinets with a glint. You need both key halves.'";
 
     [SerializeField] private float showSeconds = 6f;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip pickupClip;
+    [SerializeField, Range(0f, 1f)] private float pickupVolume = 0.9f;
 
     private bool playerInRange = false;
     private bool pickedUp = false;
@@ -29,6 +33,10 @@ public class HintNotePickup : MonoBehaviour
         if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
             pickedUp = true;
+
+            // play pickup sound (won't get cut off after Destroy)
+            if (pickupClip != null && Camera.main != null)
+                AudioSource.PlayClipAtPoint(pickupClip, Camera.main.transform.position, pickupVolume);
 
             var hud = RoomManager.Instance != null ? RoomManager.Instance.GetHUD() : null;
             if (hud != null) hud.ShowDialogue(message, showSeconds);

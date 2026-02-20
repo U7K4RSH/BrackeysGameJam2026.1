@@ -211,12 +211,12 @@ public class MiniGridGame : MonoBehaviour
 
     private void OnWin()
     {
-        Debug.Log("Mini-game complete! All buttons are ON.");
+        
         // Notify RoomManager to re-enable lights in the exit room
         if (RoomManager.Instance != null)
         {
             RoomManager.Instance.SetExitRoomLightsEnabled(true);
-            Debug.Log("Notified RoomManager to re-enable exit room lights.");
+           
         }
     }
 

@@ -136,7 +136,7 @@ public class RoomManager : MonoBehaviour
     private void EnableHintNextRoomFlag()
     {
         spawnHintNextRoom = true;
-        Debug.Log("Hint scheduled: will spawn in the next room the player enters.");
+        
     }
 
     // Public manual trigger (if needed elsewhere)
@@ -159,7 +159,7 @@ public class RoomManager : MonoBehaviour
                 if (doorSfxSource != null && doorLockedClip != null)
                     doorSfxSource.PlayOneShot(doorLockedClip, doorVolume);
 
-                if (hud != null) hud.ShowDialogue("Exit is locked. Need both key halves.");
+                if (hud != null) hud.ShowDialogue("It seems like this exit is locked.");
                 return;
             }
 
@@ -240,7 +240,7 @@ public class RoomManager : MonoBehaviour
             spawnedHint = Instantiate(hintPrefab, pos, Quaternion.identity);
             hintAlreadySpawned = true;
             spawnHintNextRoom = false;
-            Debug.Log("Spawned hint paper in room " + currentRoomId);
+           
         }
 
         // if (!hasKey && roomId == keyRoomId && keyPrefab != null)
@@ -250,10 +250,10 @@ public class RoomManager : MonoBehaviour
         //     else
         //         Instantiate(keyPrefab, currentRoom.playerSpawnDefault.position, Quaternion.identity);
         // }
-        Debug.Log("LoadRoom called on: " + gameObject.name);
+       
         if (hud != null)
             hud.SetRoomCounter(currentRoomId);
-        Debug.Log("HUD is assigned: " + hud.gameObject.name);
+        
     }
 
     private void GenerateMapping()
@@ -315,14 +315,18 @@ public class RoomManager : MonoBehaviour
         if (hud != null) hud.ShowHalfAIcon();
         if (hasHalfA && hasHalfB && hud != null)
             hud.ShowFullKeyIcon();
-        if (hud != null) hud.ShowDialogue("Half A collected!");
+        if (hud != null) hud.ShowDialogue("Looks like an upper key half..");
 
         if (hasHalfA && hasHalfB)
         {
+
+            CameraShake2D.Instance?.Shake(0.25f, 0.12f);
             // Both halves collected: turn off lights in exit room until mini-game is won
             SetExitRoomLightsEnabled(false);
-            Debug.Log("Both halves collected - exit room lights turned OFF.");
+            
+
         }
+
     }
 
     public void CollectHalfB()
@@ -335,13 +339,15 @@ public class RoomManager : MonoBehaviour
         if (hud != null) hud.ShowHalfBIcon();
         if (hasHalfA && hasHalfB && hud != null)
             hud.ShowFullKeyIcon();
-        if (hud != null) hud.ShowDialogue("Half B collected!");
+        if (hud != null) hud.ShowDialogue("Looks like a lower key half");
 
         if (hasHalfA && hasHalfB)
         {
+
+            CameraShake2D.Instance?.Shake(0.25f, 0.12f);
             // Both halves collected: turn off lights in exit room until mini-game is won
             SetExitRoomLightsEnabled(false);
-            Debug.Log("Both halves collected - exit room lights turned OFF.");
+          
         }
     }
 
