@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorTriggers
   doorId: 0
-  doorClip: {fileID: 8300000, guid: e468ce042a7c9064fb9c3268a6d57545, type: 3}
+  doorClip: {fileID: 8300000, guid: c5ac9570fb3be164997463c90ad73296, type: 3}
   volume: 0.8
 --- !u!82 &5327552981585157607
 AudioSource:
@@ -260,7 +260,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3180,6 +3180,9 @@ MonoBehaviour:
   searchClip: {fileID: 0}
   searchVolume: 0.8
   sfxSource: {fileID: 0}
+  nothingFoundClip: {fileID: 0}
+  keyFoundClip: {fileID: 0}
+  resultVolume: 0.9
   interactIdOverride: 
 --- !u!61 &3186779791924809825
 BoxCollider2D:
@@ -3532,7 +3535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorTriggers
   doorId: 1
-  doorClip: {fileID: 8300000, guid: e468ce042a7c9064fb9c3268a6d57545, type: 3}
+  doorClip: {fileID: 8300000, guid: c5ac9570fb3be164997463c90ad73296, type: 3}
   volume: 0.8
 --- !u!82 &4155895399487958561
 AudioSource:
@@ -3547,7 +3550,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5686,6 +5689,9 @@ MonoBehaviour:
   searchClip: {fileID: 0}
   searchVolume: 0.8
   sfxSource: {fileID: 0}
+  nothingFoundClip: {fileID: 0}
+  keyFoundClip: {fileID: 0}
+  resultVolume: 0.9
   interactIdOverride: 
 --- !u!61 &9077573404579240279
 BoxCollider2D:
@@ -6669,7 +6675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorTriggers
   doorId: 2
-  doorClip: {fileID: 8300000, guid: e468ce042a7c9064fb9c3268a6d57545, type: 3}
+  doorClip: {fileID: 8300000, guid: c5ac9570fb3be164997463c90ad73296, type: 3}
   volume: 0.8
 --- !u!82 &1097978140812749841
 AudioSource:
@@ -6684,7 +6690,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10819,7 +10825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorTriggers
   doorId: 3
-  doorClip: {fileID: 8300000, guid: e468ce042a7c9064fb9c3268a6d57545, type: 3}
+  doorClip: {fileID: 8300000, guid: c5ac9570fb3be164997463c90ad73296, type: 3}
   volume: 0.8
 --- !u!82 &3174055867585966392
 AudioSource:
@@ -10834,7 +10840,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

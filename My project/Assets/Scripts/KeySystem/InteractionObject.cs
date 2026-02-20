@@ -16,6 +16,11 @@ public class InteractionObject : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float searchVolume = 0.8f;
     [SerializeField] private AudioSource sfxSource;
 
+    // NEW: result sounds
+    [SerializeField] private AudioClip nothingFoundClip; // Sound A
+    [SerializeField] private AudioClip keyFoundClip;     // Sound B
+    [SerializeField, Range(0f, 1f)] private float resultVolume = 0.9f;
+
     private bool used = false;
     [SerializeField] private string interactIdOverride = "";
 
@@ -78,6 +83,15 @@ public class InteractionObject : MonoBehaviour
             spawned = RoomManager.Instance.SpawnHalfAInCurrentRoom(spawnPosition);
         else
             spawned = RoomManager.Instance.SpawnHalfBInCurrentRoom(spawnPosition);
+
+        if (sfxSource != null)
+        {
+            if (spawned && keyFoundClip != null)
+                sfxSource.PlayOneShot(keyFoundClip, resultVolume);
+
+            if (!spawned && nothingFoundClip != null)
+                sfxSource.PlayOneShot(nothingFoundClip, resultVolume);
+        }
 
         if (RoomManager.Instance != null)
         {

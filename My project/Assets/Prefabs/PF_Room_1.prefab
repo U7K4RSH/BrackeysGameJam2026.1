@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorTriggers
   doorId: 0
-  doorClip: {fileID: 8300000, guid: e468ce042a7c9064fb9c3268a6d57545, type: 3}
+  doorClip: {fileID: 8300000, guid: c5ac9570fb3be164997463c90ad73296, type: 3}
   volume: 0.8
 --- !u!82 &848498855127179650
 AudioSource:
@@ -307,7 +307,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.859
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3645,7 +3645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorTriggers
   doorId: 1
-  doorClip: {fileID: 8300000, guid: e468ce042a7c9064fb9c3268a6d57545, type: 3}
+  doorClip: {fileID: 8300000, guid: c5ac9570fb3be164997463c90ad73296, type: 3}
   volume: 0.8
 --- !u!82 &5846768719606707617
 AudioSource:
@@ -3660,7 +3660,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7179,7 +7179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorTriggers
   doorId: 2
-  doorClip: {fileID: 8300000, guid: e468ce042a7c9064fb9c3268a6d57545, type: 3}
+  doorClip: {fileID: 8300000, guid: c5ac9570fb3be164997463c90ad73296, type: 3}
   volume: 0.8
 --- !u!82 &5474484629714675156
 AudioSource:
@@ -7194,7 +7194,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7619,9 +7619,12 @@ MonoBehaviour:
   spawnOffset: {x: 0, y: -4, z: 0}
   spawnsHalfA: 1
   glintObject: {fileID: 912498676180449016}
-  searchClip: {fileID: 8300000, guid: 0740bb86da6c21b46b657da7c1c269c9, type: 3}
+  searchClip: {fileID: 0}
   searchVolume: 0.8
   sfxSource: {fileID: 4546685668336419302}
+  nothingFoundClip: {fileID: 8300000, guid: 83324c1afab489d469830a3f0b19a256, type: 3}
+  keyFoundClip: {fileID: 8300000, guid: df2f5ee58576f274d9286384177b5975, type: 3}
+  resultVolume: 0.9
   interactIdOverride: 
 --- !u!61 &7432510499904929976
 BoxCollider2D:
@@ -8106,9 +8109,12 @@ MonoBehaviour:
   spawnOffset: {x: 0, y: 5, z: 0}
   spawnsHalfA: 0
   glintObject: {fileID: 1183831829139076459}
-  searchClip: {fileID: 8300000, guid: 0740bb86da6c21b46b657da7c1c269c9, type: 3}
+  searchClip: {fileID: 0}
   searchVolume: 0.8
-  sfxSource: {fileID: 0}
+  sfxSource: {fileID: 8897593368319591422}
+  nothingFoundClip: {fileID: 8300000, guid: 83324c1afab489d469830a3f0b19a256, type: 3}
+  keyFoundClip: {fileID: 8300000, guid: df2f5ee58576f274d9286384177b5975, type: 3}
+  resultVolume: 0.9
   interactIdOverride: 
 --- !u!61 &4817556526776369134
 BoxCollider2D:
@@ -11529,7 +11535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorTriggers
   doorId: 3
-  doorClip: {fileID: 8300000, guid: e468ce042a7c9064fb9c3268a6d57545, type: 3}
+  doorClip: {fileID: 8300000, guid: c5ac9570fb3be164997463c90ad73296, type: 3}
   volume: 0.8
 --- !u!82 &4879913367131188925
 AudioSource:
@@ -11544,7 +11550,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
