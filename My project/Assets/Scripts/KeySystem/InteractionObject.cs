@@ -11,6 +11,11 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private bool spawnsHalfA = true;
     [SerializeField] private GameObject glintObject;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip searchClip;
+    [SerializeField, Range(0f, 1f)] private float searchVolume = 0.8f;
+    [SerializeField] private AudioSource sfxSource;
+
     private bool used = false;
     [SerializeField] private string interactIdOverride = "";
 
@@ -21,6 +26,9 @@ public class InteractionObject : MonoBehaviour
 
         if (glintObject != null)
             glintObject.SetActive(!used);
+
+        if (sfxSource == null)
+            sfxSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,6 +51,9 @@ public class InteractionObject : MonoBehaviour
     {
         if (!used && playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
+            if (sfxSource != null && searchClip != null)
+                sfxSource.PlayOneShot(searchClip, searchVolume);
+
             SpawnKey();
         }
     }
