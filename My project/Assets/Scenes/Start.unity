@@ -448,7 +448,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "Detective Prerit Rawat spent years chasing rumours from forgotten towns
+    on the edge of nowhere. When reports surfaced about travelers vanishing near
+    an abandoned roadside hotel, he followed the trail without hesitation. The building
+    wasn\u2019t on any official map, yet its lamps burned every night. He checked
+    in to investigate. The doors locked behind him. The staff vanished. The rooms
+    shifted. Now Prerit had a clear understanding, this hotel wasn\u2019t found."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9262c88b875c24d41bdba58fed431648, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
