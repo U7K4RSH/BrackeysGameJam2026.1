@@ -2953,7 +2953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicPlayer
   gameLoop: {fileID: 8300000, guid: 9ed3bf2ced4a80f42b25b9a97b04a097, type: 3}
-  winLoop: {fileID: 8300000, guid: 280580715f060e248a660a88032e4265, type: 3}
+  winLoop: {fileID: 8300000, guid: baf1ba0b43de91b438f12c4462a43ea5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
