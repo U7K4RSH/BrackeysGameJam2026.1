@@ -3175,6 +3175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionObject
   keyPrefab: {fileID: 2729052049100814800, guid: f50ef545a0ad1eb459a93a68eaf84d93, type: 3}
   spawnOffset: {x: 6, y: 0, z: 0}
+  spawnsMiniGame: 0
+  miniGamePrefab: {fileID: 0}
   spawnsHalfA: 0
   glintObject: {fileID: 9002840354644212252}
   searchClip: {fileID: 0}
@@ -5684,6 +5686,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionObject
   keyPrefab: {fileID: 2729052049100814800, guid: 5ba025cfe3b7e0041bdb766202d7b3a1, type: 3}
   spawnOffset: {x: 4, y: 0, z: 0}
+  spawnsMiniGame: 0
+  miniGamePrefab: {fileID: 0}
   spawnsHalfA: 1
   glintObject: {fileID: 1175067800060946968}
   searchClip: {fileID: 0}

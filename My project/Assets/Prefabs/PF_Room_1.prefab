@@ -5321,6 +5321,8 @@ GameObject:
   - component: {fileID: 4827795552039668907}
   - component: {fileID: 5136729288203592564}
   - component: {fileID: 9116470829682767680}
+  - component: {fileID: 4829182895861040593}
+  - component: {fileID: 6711377841132950670}
   m_Layer: 0
   m_Name: Hotel_Room_33
   m_TagString: Untagged
@@ -5448,6 +5450,77 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.045115083, y: 0.039492317}
   m_EdgeRadius: 0
+--- !u!61 &4829182895861040593
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4379330355457117156}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.005037455, y: -0.0045387056}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.053385418, y: 0.091145836}
+    newSize: {x: 0.053385418, y: 0.091145836}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.04331051, y: 0.10022324}
+  m_EdgeRadius: 0
+--- !u!114 &6711377841132950670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4379330355457117156}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5822f23d644ed064aaf23a426b09856b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionObject
+  keyPrefab: {fileID: 0}
+  spawnOffset: {x: 0, y: 0, z: 0}
+  spawnsMiniGame: 1
+  miniGamePrefab: {fileID: 100000000, guid: af0636d62eda9f24eb5d11a55c931a5a, type: 3}
+  spawnsHalfA: 1
+  glintObject: {fileID: 0}
+  searchClip: {fileID: 0}
+  searchVolume: 0.8
+  sfxSource: {fileID: 0}
+  nothingFoundClip: {fileID: 0}
+  keyFoundClip: {fileID: 0}
+  resultVolume: 0.9
+  interactIdOverride: 
 --- !u!1 &4387984739268992566
 GameObject:
   m_ObjectHideFlags: 0
@@ -6465,6 +6538,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5212651364654124397}
   - component: {fileID: 6919134520756932254}
+  - component: {fileID: 2221232627005343129}
+  - component: {fileID: 129140448012245160}
   m_Layer: 0
   m_Name: PuzzleBox_0
   m_TagString: Untagged
@@ -6534,7 +6609,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 500
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4319114124213364403, guid: d003c2de488974143b1db65d677bbdc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6546,6 +6621,77 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2221232627005343129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456518721106211136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5822f23d644ed064aaf23a426b09856b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionObject
+  keyPrefab: {fileID: 0}
+  spawnOffset: {x: 0, y: 0, z: 0}
+  spawnsMiniGame: 1
+  miniGamePrefab: {fileID: 100000000, guid: af0636d62eda9f24eb5d11a55c931a5a, type: 3}
+  spawnsHalfA: 0
+  glintObject: {fileID: 0}
+  searchClip: {fileID: 0}
+  searchVolume: 0.8
+  sfxSource: {fileID: 0}
+  nothingFoundClip: {fileID: 0}
+  keyFoundClip: {fileID: 0}
+  resultVolume: 0.9
+  interactIdOverride: 
+--- !u!61 &129140448012245160
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456518721106211136}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.24, y: 0.3}
+    newSize: {x: 0.24, y: 0.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.24, y: 0.3}
+  m_EdgeRadius: 0
 --- !u!1 &5739237470009335332
 GameObject:
   m_ObjectHideFlags: 0
@@ -7570,6 +7716,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionObject
   keyPrefab: {fileID: 2729052049100814800, guid: 5ba025cfe3b7e0041bdb766202d7b3a1, type: 3}
   spawnOffset: {x: 0, y: -4, z: 0}
+  spawnsMiniGame: 0
+  miniGamePrefab: {fileID: 0}
   spawnsHalfA: 1
   glintObject: {fileID: 912498676180449016}
   searchClip: {fileID: 0}
@@ -8060,6 +8208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionObject
   keyPrefab: {fileID: 2729052049100814800, guid: f50ef545a0ad1eb459a93a68eaf84d93, type: 3}
   spawnOffset: {x: 0, y: 5, z: 0}
+  spawnsMiniGame: 0
+  miniGamePrefab: {fileID: 0}
   spawnsHalfA: 0
   glintObject: {fileID: 1183831829139076459}
   searchClip: {fileID: 0}

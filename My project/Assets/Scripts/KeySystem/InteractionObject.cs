@@ -5,6 +5,10 @@ public class InteractionObject : MonoBehaviour
 {
     [SerializeField] private GameObject keyPrefab;
     [SerializeField] private Vector3 spawnOffset = Vector3.zero;
+    [Header("Optional Mini-game")]
+    [SerializeField] private bool spawnsMiniGame = true
+    ;
+    [SerializeField] private GameObject miniGamePrefab;
     
     private bool playerInRange = false;
 
@@ -23,6 +27,7 @@ public class InteractionObject : MonoBehaviour
 
     private bool used = false;
     [SerializeField] private string interactIdOverride = "";
+    private GameObject miniGameInstance = null;
 
     private void Start()
     {
@@ -49,33 +54,100 @@ public class InteractionObject : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
+            // if player walks away while a mini-game is open, close it
+            if (miniGameInstance != null)
+            {
+                var mg = miniGameInstance.GetComponent<MiniGridGame>();
+                if (mg != null) mg.Close();
+                else Destroy(miniGameInstance);
+                miniGameInstance = null;
+                if (glintObject != null) glintObject.SetActive(!used);
+            }
         }
     }
 
     private void Update()
     {
-        if (!used && playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
+        // If player presses interact while a mini-game is open, close it.
+        if (playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
             if (sfxSource != null && searchClip != null)
                 sfxSource.PlayOneShot(searchClip, searchVolume);
 
-            SpawnKey();
+            if (miniGameInstance != null)
+            {
+                var mg = miniGameInstance.GetComponent<MiniGridGame>();
+                if (mg != null) mg.Close();
+                else Destroy(miniGameInstance);
+                miniGameInstance = null;
+                if (glintObject != null) glintObject.SetActive(!used);
+                return;
+            }
+
+            // If this interactable spawns a mini-game, allow opening the mini-game
+            // only after both key halves have been collected. Ignore the "used"
+            // flag for mini-games so they can be reopened repeatedly.
+            if (spawnsMiniGame)
+            {
+                if (RoomManager.Instance != null && RoomManager.Instance.HasBothHalves())
+                {
+                    HandleInteraction();
+                }
+                else
+                {
+                    if (RoomManager.Instance != null)
+                        SimpleHUD.Instance.ShowDialogue("Nothing happens.");
+                }
+            }
+            else
+            {
+                if (!used)
+                {
+                    HandleInteraction();
+                }
+            }
         }
     }
 
-    private void SpawnKey()
+    private void HandleInteraction()
     {
         if (used) return;
 
-        used = true;
+        Vector3 spawnPosition = transform.position + spawnOffset;
 
+        if (spawnsMiniGame)
+        {
+            // Spawn mini-game without marking this interactable as used so it can be reopened.
+            if (miniGamePrefab != null)
+            {
+                var inst = Instantiate(miniGamePrefab, spawnPosition, Quaternion.identity);
+                if (inst.GetComponent<MiniGridGame>() == null)
+                    inst.AddComponent<MiniGridGame>();
+                miniGameInstance = inst;
+            }
+            else
+            {
+                var mgGO = new GameObject("MiniGridGame_Runtime");
+                mgGO.AddComponent<MiniGridGame>();
+                mgGO.transform.position = spawnPosition;
+                miniGameInstance = mgGO;
+            }
+
+            if (glintObject != null)
+                glintObject.SetActive(false);
+
+            return;
+        }
+
+        // For pickups (half A / B) mark this interactable as used so it cannot be reused.
+        used = true;
         int roomId = RoomManager.Instance.GetCurrentRoomId();
         RoomManager.Instance.MarkInteractableUsed(roomId, GetInteractId());
 
         if (glintObject != null)
             glintObject.SetActive(false);
 
-        Vector3 spawnPosition = transform.position + spawnOffset;
+        // Vector3 spawnPosition = transform.position + spawnOffset;
 
         bool spawned = false;
 
