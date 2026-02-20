@@ -27,6 +27,12 @@ public class RoomManager : MonoBehaviour
     [Header("Hint / Paper")]
     [SerializeField] private GameObject hintPrefab;
 
+    [Header("Audio - Doors")]
+    [SerializeField] private AudioClip doorOpenClip;
+    [SerializeField] private AudioClip doorLockedClip;
+    [SerializeField, Range(0f, 1f)] private float doorVolume = 0.8f;
+    [SerializeField] private AudioSource doorSfxSource;
+
     // When true, the next room loaded will receive the hint paper
     private bool spawnHintNextRoom = false;
     private GameObject spawnedHint;
@@ -97,6 +103,8 @@ public class RoomManager : MonoBehaviour
         Instance = this;
         if (keySfxSource == null)
             keySfxSource = GetComponent<AudioSource>();
+        if(doorSfxSource == null)
+    doorSfxSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -139,29 +147,41 @@ public class RoomManager : MonoBehaviour
 
     public void EnterDoor(int doorId)
     {
-        if (Time.time < doorlockuntil) return; 
+        if (Time.time < doorlockuntil) return;
         if (currentRoom == null) return;
 
+        // EXIT door check
         if (currentRoomId == exitRoomId && doorId == exitDoorId)
         {
             if (!(hasHalfA && hasHalfB))
             {
+                // play LOCKED sound
+                if (doorSfxSource != null && doorLockedClip != null)
+                    doorSfxSource.PlayOneShot(doorLockedClip, doorVolume);
+
                 if (hud != null) hud.ShowDialogue("Exit is locked. Need both key halves.");
                 return;
             }
-            hud.ShowWin();
-            
 
+            // play OPEN sound (you are allowed to exit)
+            if (doorSfxSource != null && doorOpenClip != null)
+                doorSfxSource.PlayOneShot(doorOpenClip, doorVolume);
+
+            hud.ShowWin();
             return;
         }
+
+        // normal doors: play OPEN sound
+        if (doorSfxSource != null && doorOpenClip != null)
+            doorSfxSource.PlayOneShot(doorOpenClip, doorVolume);
 
         doorlockuntil = Time.time + doorCooldown;
 
         int nextRoomId = map[currentRoomId, doorId];
-        
-        SetAllDoorsBlocking(true); // block all doors during transition
+
+        SetAllDoorsBlocking(true);
         CancelInvoke(nameof(UnlockDoors));
-        
+
         StartCoroutine(TransitionToRoom(nextRoomId, doorId));
     }
 

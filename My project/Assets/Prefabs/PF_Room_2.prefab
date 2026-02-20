@@ -6029,7 +6029,7 @@ MonoBehaviour:
   searchVolume: 0.8
   sfxSource: {fileID: 7777812096875977612}
   nothingFoundClip: {fileID: 8300000, guid: 83324c1afab489d469830a3f0b19a256, type: 3}
-  keyFoundClip: {fileID: 8300000, guid: df2f5ee58576f274d9286384177b5975, type: 3}
+  keyFoundClip: {fileID: 8300000, guid: f2cb7fb63d79ce14e9e767f3c6eb4309, type: 3}
   resultVolume: 0.9
   interactIdOverride: 
 --- !u!61 &5118676988643680511
@@ -7410,7 +7410,7 @@ MonoBehaviour:
   searchVolume: 0.8
   sfxSource: {fileID: 1996571094201958348}
   nothingFoundClip: {fileID: 8300000, guid: 83324c1afab489d469830a3f0b19a256, type: 3}
-  keyFoundClip: {fileID: 8300000, guid: df2f5ee58576f274d9286384177b5975, type: 3}
+  keyFoundClip: {fileID: 8300000, guid: f2cb7fb63d79ce14e9e767f3c6eb4309, type: 3}
   resultVolume: 0.9
   interactIdOverride: 
 --- !u!82 &1996571094201958348
