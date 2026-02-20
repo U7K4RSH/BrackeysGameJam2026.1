@@ -89,7 +89,7 @@ public class InteractionObject : MonoBehaviour
             // flag for mini-games so they can be reopened repeatedly.
             if (spawnsMiniGame)
             {
-                if (RoomManager.Instance != null && RoomManager.Instance.HasBothHalves())
+                if (RoomManager.Instance != null && RoomManager.Instance.HasBothHalves() && RoomManager.Instance.HasSeenDarkRoom())
                 {
                     HandleInteraction();
                 }

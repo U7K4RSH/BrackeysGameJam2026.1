@@ -64,6 +64,8 @@ public class RoomManager : MonoBehaviour
     // store original rotation for the exit room so we can restore after flipping
     private Quaternion exitRoomOriginalRotation = Quaternion.identity;
     private bool exitRoomOriginalRotationStored = false;
+    // whether the player has seen the exit room while it's dark
+    private bool hasSeenExitRoomDark = false;
 
     //private bool blackoutActive = false;
     public static RoomManager Instance { get; private set; }
@@ -95,6 +97,8 @@ public class RoomManager : MonoBehaviour
 
     // Returns true when both key halves have been collected
     public bool HasBothHalves() => hasHalfA && hasHalfB;
+    // Returns true when the player has visited the exit room while it's dark
+    public bool HasSeenDarkRoom() => hasSeenExitRoomDark;
     //private bool keyAlreadySpawned = false;
 
     private void Awake()
@@ -222,10 +226,10 @@ public class RoomManager : MonoBehaviour
         if (currentRoom != null)
         {
             Destroy(currentRoom.gameObject);
-            // previous room destroyed: clear any stored values that referenced it
             exitRoomOriginalIntensities.Clear();
             exitRoomOriginalRotationStored = false;
         }
+
 
         GameObject roomGO = Instantiate(roomPrefabs[roomId]);
         currentRoom = roomGO.GetComponent<RoomDefinition>();
@@ -432,6 +436,8 @@ public class RoomManager : MonoBehaviour
         {
             if (exitRoomLightsOff)
             {
+                hasSeenExitRoomDark = true;
+                hud.ShowDialogue("It's too dark here — turn the lights on first.");
                 if (!exitRoomOriginalRotationStored)
                 {
                     exitRoomOriginalRotation = currentRoom.transform.rotation;
