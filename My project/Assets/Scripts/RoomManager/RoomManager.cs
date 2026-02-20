@@ -1,16 +1,47 @@
+using System.Collections;
+//using System.Diagnostics;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
 
-    [Header("Win / Key")]
-    [SerializeField] private GameObject keyPrefab;   
-    [SerializeField] private int exitDoorId = 3;     
+    //[Header("Win / Key")]
+    //[SerializeField] private GameObject keyPrefab;
 
-    private int exitRoomId;      
-    private int keyRoomId;      
-    private bool hasKey = false;
+    [Header("Key Halves")]
+    [SerializeField] private GameObject keyHalfAPrefab;
+    [SerializeField] private GameObject keyHalfBPrefab;
 
+    [Header("Hint / Paper")]
+    [SerializeField] private GameObject hintPrefab;
+    // When true, the next room loaded will receive the hint paper
+    private bool spawnHintNextRoom = false;
+    private GameObject spawnedHint;
+    private bool hintAlreadySpawned = false;
+   
+    //private int keyRoomId;
+    private int halfARoomId;
+    private int halfBRoomId;
+
+    //private bool hasKey = false;
+    private bool hasHalfA = false;
+    private bool hasHalfB = false;
+
+    //private GameObject spawnedKey;
+    private GameObject spawnedHalfA;
+    private GameObject spawnedHalfB;
+
+    //private bool keyAlreadySpawned = false;
+    private bool halfAAlreadySpawned = false;
+    private bool halfBAlreadySpawned = false;
+
+
+    [SerializeField] private int exitDoorId = 3;
+   
+
+    private int exitRoomId;
+
+    //private bool blackoutActive = false;
     public static RoomManager Instance { get; private set; }
 
     [Header("Room prefabs (index = roomId)")]
@@ -31,10 +62,14 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private float doorCooldown = 2.5f;
 
     [SerializeField] private SimpleHUD hud;
-    
-    private GameObject spawnedKey;
-    private bool keyAlreadySpawned = false;
-    
+
+    private readonly System.Collections.Generic.HashSet<string> usedInteractables
+    = new System.Collections.Generic.HashSet<string>();
+
+    public int GetCurrentRoomId() => currentRoomId;
+
+    //private bool keyAlreadySpawned = false;
+
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -50,13 +85,33 @@ public class RoomManager : MonoBehaviour
         
         exitRoomId = n - 1;
 
-        do { keyRoomId = rng.Next(0, n); }
-        while (keyRoomId == 0 || keyRoomId == exitRoomId);
+        halfARoomId = rng.Next(0, n);
 
-
+        // forcing half b to be different if possible, to ensure they are not in the same room
+        if (n <= 1) halfBRoomId = halfARoomId;
+        else
+        {
+            do { halfBRoomId = rng.Next(0, n); }
+            while (halfBRoomId == halfARoomId);
+        }
 
         GenerateMapping();
         LoadRoom(0, entryDoorId: 0, useDefaultSpawn: true);
+
+        // Schedule a hint to appear in the next room entered after 30s
+        Invoke(nameof(EnableHintNextRoomFlag), 30f);
+    }
+
+    private void EnableHintNextRoomFlag()
+    {
+        spawnHintNextRoom = true;
+        Debug.Log("Hint scheduled: will spawn in the next room the player enters.");
+    }
+
+    // Public manual trigger (if needed elsewhere)
+    public void TriggerHintNextRoom()
+    {
+        spawnHintNextRoom = true;
     }
 
     public void EnterDoor(int doorId)
@@ -66,25 +121,47 @@ public class RoomManager : MonoBehaviour
 
         if (currentRoomId == exitRoomId && doorId == exitDoorId)
         {
-            if (!hasKey)
+            if (!(hasHalfA && hasHalfB))
             {
-                Debug.Log("Exit is locked. Need the key.");
+                if (hud != null) hud.ShowDialogue("Exit is locked. Need both key halves.");
                 return;
             }
             hud.ShowWin();
-            Debug.Log("YOU WIN!");
             
+
             return;
         }
 
-            doorlockuntil = Time.time + doorCooldown;
+        doorlockuntil = Time.time + doorCooldown;
 
         int nextRoomId = map[currentRoomId, doorId];
-        LoadRoom(nextRoomId, entryDoorId: doorId);
-
+        
         SetAllDoorsBlocking(true); // block all doors during transition
         CancelInvoke(nameof(UnlockDoors));
-        Invoke(nameof(UnlockDoors), doorCooldown); // unlock after cooldown
+        
+        StartCoroutine(TransitionToRoom(nextRoomId, doorId));
+    }
+
+    private IEnumerator TransitionToRoom(int nextRoomId, int entryDoorId)
+    {
+        // Fade out
+        FadeTransitionManager.Instance.FadeOut();
+        // wait for configured fade duration
+        yield return new WaitForSeconds(FadeTransitionManager.Instance.FadeDuration);
+
+        // Load the new room while screen is fully dark
+        LoadRoom(nextRoomId, entryDoorId: entryDoorId);
+
+        // Snap the camera to the new player position to avoid visible camera panning
+        var camFollower = FindObjectOfType<CameraFollow2D>();
+        if (camFollower != null)
+            camFollower.SnapToTarget();
+
+        // Fade in
+        FadeTransitionManager.Instance.FadeIn();
+        yield return new WaitForSeconds(FadeTransitionManager.Instance.FadeDuration);
+
+        Invoke(nameof(UnlockDoors), 0.1f); // unlock after fade completes
     }
 
     private void LoadRoom(int roomId, int entryDoorId, bool useDefaultSpawn = false)
@@ -104,6 +181,17 @@ public class RoomManager : MonoBehaviour
         
         // Update key visibility based on current room
         UpdateKeyVisibility(roomId);
+
+        // If a hint was scheduled, spawn the hint prefab in this room (once)
+        if (spawnHintNextRoom && hintPrefab != null && !hintAlreadySpawned)
+        {
+            Transform hintSpawn = currentRoom.Keyspawn != null ? currentRoom.Keyspawn : currentRoom.playerSpawnDefault;
+            Vector3 pos = hintSpawn != null ? hintSpawn.position : player.position;
+            spawnedHint = Instantiate(hintPrefab, pos, Quaternion.identity);
+            hintAlreadySpawned = true;
+            spawnHintNextRoom = false;
+            Debug.Log("Spawned hint paper in room " + currentRoomId);
+        }
 
         // if (!hasKey && roomId == keyRoomId && keyPrefab != null)
         // {
@@ -155,32 +243,90 @@ public class RoomManager : MonoBehaviour
     SetAllDoorsBlocking(false);
     }
 
-    public void CollectKey()
+    /*
+       public void CollectKey()
     {
         hasKey = true;
         Debug.Log("Key collected!");
+
+
+        if (hud != null)
+            hud.ShowKeyIcon();
+    }
+    */
+
+    public void CollectHalfA()
+    {
+        hasHalfA = true;
+        if (hud != null) hud.ShowHalfAIcon();
+        if (hasHalfA && hasHalfB && hud != null)
+            hud.ShowFullKeyIcon();
+        if (hud != null) hud.ShowDialogue("Half A collected!");
     }
 
-    public void SpawnKeyInCurrentRoom(Vector3 position)
+    public void CollectHalfB()
+    {
+        hasHalfB = true;
+        if (hud != null) hud.ShowHalfBIcon();
+        if (hasHalfA && hasHalfB && hud != null)
+            hud.ShowFullKeyIcon();
+        if (hud != null) hud.ShowDialogue("Half B collected!");
+    }
+
+    /*
+       public void SpawnKeyInCurrentRoom(Vector3 position)
     {
         if (currentRoom == null) return;
-        if (spawnedKey != null || keyAlreadySpawned) return;
+        if (spawnedKey != null || keyAlreadySpawned || keyRoomId!=currentRoomId) return;
         
         spawnedKey = Instantiate(keyPrefab, position, Quaternion.identity);
         keyAlreadySpawned = true;
-        KeyPickup keyPickup = spawnedKey.GetComponent<KeyPickup>();
-        if (keyPickup != null)
-            keyPickup.roomId = currentRoomId;
     }
-    
+    */
+
+    public bool SpawnHalfAInCurrentRoom(Vector3 position)
+    {
+        if (currentRoom == null) return false;
+        if (spawnedHalfA != null || halfAAlreadySpawned) return false;
+        if (currentRoomId != halfARoomId) return false;
+
+        spawnedHalfA = Instantiate(keyHalfAPrefab, position, Quaternion.identity);
+        halfAAlreadySpawned = true;
+        return true;
+    }
+
+    public bool SpawnHalfBInCurrentRoom(Vector3 position)
+    {
+        if (currentRoom == null) return false;
+        if (spawnedHalfB != null || halfBAlreadySpawned) return false;
+        if (currentRoomId != halfBRoomId) return false;
+
+        spawnedHalfB = Instantiate(keyHalfBPrefab, position, Quaternion.identity);
+        halfBAlreadySpawned = true;
+        return true;
+    }
+
     private void UpdateKeyVisibility(int newRoomId)
     {
-        if (spawnedKey == null) return;
-        
-        KeyPickup keyPickup = spawnedKey.GetComponent<KeyPickup>();
-        if (keyPickup != null)
-        {
-            spawnedKey.SetActive(keyPickup.roomId == newRoomId);
-        }
+        /*
+         if (spawnedKey == null) return;
+        spawnedKey.SetActive(keyRoomId == newRoomId);
+        */
+        if (spawnedHalfA != null)
+            spawnedHalfA.SetActive(halfARoomId == newRoomId);
+
+        if (spawnedHalfB != null)
+            spawnedHalfB.SetActive(halfBRoomId == newRoomId);
     }
+
+    public bool IsInteractableUsed(int roomId, string interactId)
+    {
+        return usedInteractables.Contains($"{roomId}:{interactId}");
+    }
+
+    public void MarkInteractableUsed(int roomId, string interactId)
+    {
+        usedInteractables.Add($"{roomId}:{interactId}");
+    }
+
 }
