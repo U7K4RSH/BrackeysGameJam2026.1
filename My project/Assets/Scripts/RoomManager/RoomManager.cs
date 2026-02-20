@@ -18,6 +18,11 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private GameObject keyHalfAPrefab;
     [SerializeField] private GameObject keyHalfBPrefab;
 
+    [Header("Audio - Key Pickup")]
+    [SerializeField] private AudioClip keyPickupClip;
+    [SerializeField, Range(0f, 1f)] private float keyPickupVolume = 0.9f;
+    [SerializeField] private AudioSource keySfxSource;
+
     [Header("Hint / Paper")]
     [SerializeField] private GameObject hintPrefab;
 
@@ -80,6 +85,8 @@ public class RoomManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+        if (keySfxSource == null)
+            keySfxSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -264,6 +271,10 @@ public class RoomManager : MonoBehaviour
     public void CollectHalfA()
     {
         hasHalfA = true;
+
+        if (keySfxSource != null && keyPickupClip != null)
+            keySfxSource.PlayOneShot(keyPickupClip, keyPickupVolume);
+
         if (hud != null) hud.ShowHalfAIcon();
         if (hasHalfA && hasHalfB && hud != null)
             hud.ShowFullKeyIcon();
@@ -273,6 +284,10 @@ public class RoomManager : MonoBehaviour
     public void CollectHalfB()
     {
         hasHalfB = true;
+
+        if (keySfxSource != null && keyPickupClip != null)
+            keySfxSource.PlayOneShot(keyPickupClip, keyPickupVolume);
+
         if (hud != null) hud.ShowHalfBIcon();
         if (hasHalfA && hasHalfB && hud != null)
             hud.ShowFullKeyIcon();

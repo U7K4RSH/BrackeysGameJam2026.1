@@ -106,6 +106,9 @@ public class SimpleHUD : MonoBehaviour
         if (winPanel != null)
             winPanel.SetActive(true);
 
+        if(MusicPlayer.Instance != null)
+            MusicPlayer.Instance.PlayWinLoop();
+
         Time.timeScale = 0f;
     }
 
