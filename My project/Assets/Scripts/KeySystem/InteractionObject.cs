@@ -6,7 +6,8 @@ public class InteractionObject : MonoBehaviour
     [SerializeField] private GameObject keyPrefab;
     [SerializeField] private Vector3 spawnOffset = Vector3.zero;
     [Header("Optional Mini-game")]
-    [SerializeField] private bool spawnsMiniGame = false;
+    [SerializeField] private bool spawnsMiniGame = true
+    ;
     [SerializeField] private GameObject miniGamePrefab;
     
     private bool playerInRange = false;
@@ -40,6 +41,15 @@ public class InteractionObject : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
+            // if player walks away while a mini-game is open, close it
+            if (miniGameInstance != null)
+            {
+                var mg = miniGameInstance.GetComponent<MiniGridGame>();
+                if (mg != null) mg.Close();
+                else Destroy(miniGameInstance);
+                miniGameInstance = null;
+                if (glintObject != null) glintObject.SetActive(!used);
+            }
         }
     }
 
@@ -54,6 +64,7 @@ public class InteractionObject : MonoBehaviour
                 if (mg != null) mg.Close();
                 else Destroy(miniGameInstance);
                 miniGameInstance = null;
+                if (glintObject != null) glintObject.SetActive(!used);
                 return;
             }
 
@@ -68,18 +79,11 @@ public class InteractionObject : MonoBehaviour
     {
         if (used) return;
 
-        used = true;
-
-        int roomId = RoomManager.Instance.GetCurrentRoomId();
-        RoomManager.Instance.MarkInteractableUsed(roomId, GetInteractId());
-
-        if (glintObject != null)
-            glintObject.SetActive(false);
-
         Vector3 spawnPosition = transform.position + spawnOffset;
 
         if (spawnsMiniGame)
         {
+            // Spawn mini-game without marking this interactable as used so it can be reopened.
             if (miniGamePrefab != null)
             {
                 var inst = Instantiate(miniGamePrefab, spawnPosition, Quaternion.identity);
@@ -94,8 +98,20 @@ public class InteractionObject : MonoBehaviour
                 mgGO.transform.position = spawnPosition;
                 miniGameInstance = mgGO;
             }
+
+            if (glintObject != null)
+                glintObject.SetActive(false);
+
             return;
         }
+
+        // For pickups (half A / B) mark this interactable as used so it cannot be reused.
+        used = true;
+        int roomId = RoomManager.Instance.GetCurrentRoomId();
+        RoomManager.Instance.MarkInteractableUsed(roomId, GetInteractId());
+
+        if (glintObject != null)
+            glintObject.SetActive(false);
 
         if (spawnsHalfA)
             RoomManager.Instance.SpawnHalfAInCurrentRoom(spawnPosition);
