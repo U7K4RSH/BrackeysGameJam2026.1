@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-
-    //[Header("Win / Key")]
+    /* Previous Single key System, Replaced by 2 key halfs*/
+    //[Header("Win / Key")]                                                       
     //[SerializeField] private GameObject keyPrefab;
+    //private int keyRoomId;
+    //private bool hasKey = false;
+    //private GameObject spawnedKey;
+    //private bool keyAlreadySpawned = false;
+
+    [SerializeField] private int exitDoorId = 3;
 
     [Header("Key Halves")]
     [SerializeField] private GameObject keyHalfAPrefab;
@@ -14,30 +20,29 @@ public class RoomManager : MonoBehaviour
 
     [Header("Hint / Paper")]
     [SerializeField] private GameObject hintPrefab;
+
     // When true, the next room loaded will receive the hint paper
     private bool spawnHintNextRoom = false;
     private GameObject spawnedHint;
     private bool hintAlreadySpawned = false;
    
-    //private int keyRoomId;
+    
     private int halfARoomId;
     private int halfBRoomId;
 
-    //private bool hasKey = false;
+   
     private bool hasHalfA = false;
     private bool hasHalfB = false;
 
-    //private GameObject spawnedKey;
+    
     private GameObject spawnedHalfA;
     private GameObject spawnedHalfB;
 
-    //private bool keyAlreadySpawned = false;
+   
     private bool halfAAlreadySpawned = false;
     private bool halfBAlreadySpawned = false;
 
-
-    [SerializeField] private int exitDoorId = 3;
-   
+    public SimpleHUD GetHUD() => hud;
 
     private int exitRoomId;
 
@@ -63,8 +68,9 @@ public class RoomManager : MonoBehaviour
 
     [SerializeField] private SimpleHUD hud;
 
-    private readonly System.Collections.Generic.HashSet<string> usedInteractables
-    = new System.Collections.Generic.HashSet<string>();
+    private readonly System.Collections.Generic.HashSet<string> usedInteractables // mujhe hashsets pata hai for 0(1) lookups but ye gpt ka tareeka hai bc mera nai, will refactor later.
+    = new System.Collections.Generic.HashSet<string>();                           // bot isko roomId:interactId format me store kar raha hai, taki har room ke interactables alag track ho sake.
+                                                                                  // will try a simpler bool tracking of 12 interactables per room later if this works fine for now.
 
     public int GetCurrentRoomId() => currentRoomId;
 
