@@ -5,6 +5,9 @@ public class InteractionObject : MonoBehaviour
 {
     [SerializeField] private GameObject keyPrefab;
     [SerializeField] private Vector3 spawnOffset = Vector3.zero;
+    [Header("Optional Mini-game")]
+    [SerializeField] private bool spawnsMiniGame = false;
+    [SerializeField] private GameObject miniGamePrefab;
     
     private bool playerInRange = false;
 
@@ -13,6 +16,7 @@ public class InteractionObject : MonoBehaviour
 
     private bool used = false;
     [SerializeField] private string interactIdOverride = "";
+    private GameObject miniGameInstance = null;
 
     private void Start()
     {
@@ -41,13 +45,26 @@ public class InteractionObject : MonoBehaviour
 
     private void Update()
     {
-        if (!used && playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
+        // If player presses interact while a mini-game is open, close it.
+        if (playerInRange && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            SpawnKey();
+            if (miniGameInstance != null)
+            {
+                var mg = miniGameInstance.GetComponent<MiniGridGame>();
+                if (mg != null) mg.Close();
+                else Destroy(miniGameInstance);
+                miniGameInstance = null;
+                return;
+            }
+
+            if (!used)
+            {
+                HandleInteraction();
+            }
         }
     }
 
-    private void SpawnKey()
+    private void HandleInteraction()
     {
         if (used) return;
 
@@ -60,6 +77,25 @@ public class InteractionObject : MonoBehaviour
             glintObject.SetActive(false);
 
         Vector3 spawnPosition = transform.position + spawnOffset;
+
+        if (spawnsMiniGame)
+        {
+            if (miniGamePrefab != null)
+            {
+                var inst = Instantiate(miniGamePrefab, spawnPosition, Quaternion.identity);
+                if (inst.GetComponent<MiniGridGame>() == null)
+                    inst.AddComponent<MiniGridGame>();
+                miniGameInstance = inst;
+            }
+            else
+            {
+                var mgGO = new GameObject("MiniGridGame_Runtime");
+                mgGO.AddComponent<MiniGridGame>();
+                mgGO.transform.position = spawnPosition;
+                miniGameInstance = mgGO;
+            }
+            return;
+        }
 
         if (spawnsHalfA)
             RoomManager.Instance.SpawnHalfAInCurrentRoom(spawnPosition);

@@ -459,6 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RoomManager
   keyHalfAPrefab: {fileID: 2729052049100814800, guid: 5ba025cfe3b7e0041bdb766202d7b3a1, type: 3}
   keyHalfBPrefab: {fileID: 2729052049100814800, guid: f50ef545a0ad1eb459a93a68eaf84d93, type: 3}
+  hintPrefab: {fileID: 0}
   exitDoorId: 3
   roomPrefabs:
   - {fileID: 890850703634790419, guid: 0471613a6f955e940a49d23995bc65e8, type: 3}

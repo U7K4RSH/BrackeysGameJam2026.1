@@ -1,6 +1,7 @@
 using System.Collections;
 //using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class RoomManager : MonoBehaviour
 {
@@ -40,6 +41,10 @@ public class RoomManager : MonoBehaviour
    
 
     private int exitRoomId;
+    // whether the exit room lights should be off until re-enabled
+    private bool exitRoomLightsOff = false;
+    // store original intensities for global lights in the currently loaded exit room
+    private System.Collections.Generic.Dictionary<Light2D, float> exitRoomOriginalIntensities = new System.Collections.Generic.Dictionary<Light2D, float>();
 
     //private bool blackoutActive = false;
     public static RoomManager Instance { get; private set; }
@@ -153,7 +158,7 @@ public class RoomManager : MonoBehaviour
         LoadRoom(nextRoomId, entryDoorId: entryDoorId);
 
         // Snap the camera to the new player position to avoid visible camera panning
-        var camFollower = FindObjectOfType<CameraFollow2D>();
+        var camFollower = CameraFollow2D.FindAnyObjectByType<CameraFollow2D>();
         if (camFollower != null)
             camFollower.SnapToTarget();
 
@@ -181,6 +186,8 @@ public class RoomManager : MonoBehaviour
         
         // Update key visibility based on current room
         UpdateKeyVisibility(roomId);
+
+        ApplyExitRoomLightsState();
 
         // If a hint was scheduled, spawn the hint prefab in this room (once)
         if (spawnHintNextRoom && hintPrefab != null && !hintAlreadySpawned)
@@ -262,6 +269,13 @@ public class RoomManager : MonoBehaviour
         if (hasHalfA && hasHalfB && hud != null)
             hud.ShowFullKeyIcon();
         Debug.Log("Half A collected!");
+
+        if (hasHalfA && hasHalfB)
+        {
+            // Both halves collected: turn off lights in exit room until mini-game is won
+            SetExitRoomLightsEnabled(false);
+            Debug.Log("Both halves collected - exit room lights turned OFF.");
+        }
     }
 
     public void CollectHalfB()
@@ -271,6 +285,13 @@ public class RoomManager : MonoBehaviour
         if (hasHalfA && hasHalfB && hud != null)
             hud.ShowFullKeyIcon();
         Debug.Log("Half B collected!");
+
+        if (hasHalfA && hasHalfB)
+        {
+            // Both halves collected: turn off lights in exit room until mini-game is won
+            SetExitRoomLightsEnabled(false);
+            Debug.Log("Both halves collected - exit room lights turned OFF.");
+        }
     }
 
     /*
@@ -325,6 +346,25 @@ public class RoomManager : MonoBehaviour
     public void MarkInteractableUsed(int roomId, string interactId)
     {
         usedInteractables.Add($"{roomId}:{interactId}");
+    }
+
+    public void SetExitRoomLightsEnabled(bool enabled)
+    {
+        exitRoomLightsOff = !enabled;
+        ApplyExitRoomLightsState();
+    }
+
+    private void ApplyExitRoomLightsState()
+    {
+        if (player != null)
+        {
+            var pLight = player.GetComponentInChildren<Light2D>(true);
+            if (pLight != null)
+            {
+                float targetIntensity = (currentRoomId == exitRoomId && exitRoomLightsOff) ? 0f : 0.35f;
+                pLight.intensity = targetIntensity;
+            }
+        }
     }
 
 }
