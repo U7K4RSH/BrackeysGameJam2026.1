@@ -153,6 +153,16 @@ public class RoomManager : MonoBehaviour
         // EXIT door check
         if (currentRoomId == exitRoomId && doorId == exitDoorId)
         {
+            // blocked if exit-room lights are off
+            if (exitRoomLightsOff)
+            {
+                if (doorSfxSource != null && doorLockedClip != null)
+                    doorSfxSource.PlayOneShot(doorLockedClip, doorVolume);
+
+                if (hud != null) hud.ShowDialogue("Exit is sealed while lights are off.");
+                return;
+            }
+
             if (!(hasHalfA && hasHalfB))
             {
                 // play LOCKED sound
@@ -447,6 +457,14 @@ public class RoomManager : MonoBehaviour
             {
                 float targetIntensity = (currentRoomId == exitRoomId && exitRoomLightsOff) ? 0f : 0.35f;
                 pLight.intensity = targetIntensity;
+            }
+
+            // Inform player movement to invert controls when exit-room lights are turned off
+            var pm = player.GetComponent<PlayerMovement>();
+            if (pm != null)
+            {
+                bool invert = (currentRoomId == exitRoomId && exitRoomLightsOff);
+                pm.SetInverted(invert);
             }
         }
     }

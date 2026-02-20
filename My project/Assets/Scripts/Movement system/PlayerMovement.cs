@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;        // Physis body component, jisme hum movement apply karenge
     private Vector2 moveInput;     // vector de jo keyboard se input store karega, x aur y dono ke liye
+    private bool invertMovement = false;
 
     private Vector2 lastDir = Vector2.down;
     private void Awake()
@@ -60,7 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
 
         
-        moveInput = input.normalized;
+        Vector2 effectiveInput = invertMovement ? -input : input;
+        moveInput = effectiveInput.normalized;
 
         if (animator != null)
         {
@@ -82,6 +84,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
+    }
+
+    public void SetInverted(bool inverted)
+    {
+        invertMovement = inverted;
     }
 
     private void FixedUpdate()
