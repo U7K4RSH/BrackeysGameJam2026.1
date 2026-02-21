@@ -32,8 +32,11 @@ public class DoorTriggers : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+         if (!other.CompareTag("Player")) return;
 
-        RoomManager.Instance.EnterDoor(doorId);
+    if (doorClip != null)
+        audioSource.PlayOneShot(doorClip, volume);
+
+    RoomManager.Instance.EnterDoor(doorId);
     }
 }

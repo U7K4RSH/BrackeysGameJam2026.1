@@ -33,6 +33,8 @@ public class SimpleHUD : MonoBehaviour
     }
     private void Start()
     {
+       
+
         if (keyIcon != null) keyIcon.SetActive(false);
         if (keyHalfAIcon != null) keyHalfAIcon.SetActive(false);
         if (keyHalfBIcon != null) keyHalfBIcon.SetActive(false);
@@ -53,6 +55,19 @@ public class SimpleHUD : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void BackToMainMenu()
+    {
+       
+        Time.timeScale = 1f;
+
+       
+        if (MusicPlayer.Instance != null)
+            MusicPlayer.Instance.PlayGameLoop();
+
+   
+        SceneManager.LoadScene("Start");
     }
 
     public void Quit()

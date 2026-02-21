@@ -766,9 +766,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlintPulse
   sr: {fileID: 0}
-  speed: 6
+  alphaSpeed: 3
   minA: 0.15
   maxA: 1
+  scaleSpeed: 3
+  minScale: 0.9
+  maxScale: 1.1
 --- !u!1 &890850703634790419
 GameObject:
   m_ObjectHideFlags: 0
@@ -12289,9 +12292,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlintPulse
   sr: {fileID: 0}
-  speed: 6
+  alphaSpeed: 3
   minA: 0.15
   maxA: 1
+  scaleSpeed: 3
+  minScale: 0.9
+  maxScale: 1.1
 --- !u!1 &8716282714150629469
 GameObject:
   m_ObjectHideFlags: 0

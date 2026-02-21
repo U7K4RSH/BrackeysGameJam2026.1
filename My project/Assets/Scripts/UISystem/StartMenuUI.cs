@@ -31,7 +31,12 @@ public class StartMenuUI : MonoBehaviour
 
     private void Start()
     {
+       
+
         Time.timeScale = 1f;
+
+        if (MusicPlayer.Instance != null)
+            MusicPlayer.Instance.PlayGameLoop();
 
         // start black -> fade in to menu
         if (fadeGroup != null)
