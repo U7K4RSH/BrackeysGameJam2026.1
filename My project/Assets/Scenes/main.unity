@@ -535,6 +535,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomManager
   exitDoorId: 3
+  bothHalvesClip: {fileID: 8300000, guid: eea892b0b1056384e94bf7b5c2872bb0, type: 3}
+  bothHalvesVolume: 0.352
   keyHalfAPrefab: {fileID: 2729052049100814800, guid: 5ba025cfe3b7e0041bdb766202d7b3a1, type: 3}
   keyHalfBPrefab: {fileID: 2729052049100814800, guid: f50ef545a0ad1eb459a93a68eaf84d93, type: 3}
   keyPickupClip: {fileID: 8300000, guid: ff213ab6308361a4f8a8770763df31b8, type: 3}
@@ -2952,8 +2954,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef419343069dfbe45a4f2e1fc4f94938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicPlayer
+  darkRoomLoop: {fileID: 8300000, guid: b096d4d66af38e143aca9b8ac96947fc, type: 3}
   gameLoop: {fileID: 8300000, guid: 9ed3bf2ced4a80f42b25b9a97b04a097, type: 3}
   winLoop: {fileID: 8300000, guid: baf1ba0b43de91b438f12c4462a43ea5, type: 3}
+  masterVolume: 1
+  gameLoopVolume: 0.208
+  darkLoopVolume: 0.528
+  winLoopVolume: 0.218
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

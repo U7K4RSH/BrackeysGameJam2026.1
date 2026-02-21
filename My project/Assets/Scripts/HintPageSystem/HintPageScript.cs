@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(AudioSource))]
 public class HintNotePickup : MonoBehaviour
 {
     [TextArea(2, 6)]
-    [SerializeField] private string message = "Someone left a note here, - 'Check cabinets with a glint. You need both key halves.'";
+    [SerializeField] private string message = "Someone left a note here, - 'Check cabinets with a glint. You need both key halves. the exit is in room 3 bottom'";
 
     [SerializeField] private float showSeconds = 6f;
 
@@ -12,8 +13,19 @@ public class HintNotePickup : MonoBehaviour
     [SerializeField] private AudioClip pickupClip;
     [SerializeField, Range(0f, 1f)] private float pickupVolume = 0.9f;
 
+    private AudioSource sfx;
+
     private bool playerInRange = false;
     private bool pickedUp = false;
+
+    private void Awake()
+    {
+        sfx = GetComponent<AudioSource>();
+        sfx.playOnAwake = false;
+        sfx.loop = false;
+        sfx.spatialBlend = 0f; // 2D
+        sfx.panStereo = 0f;    // dead center
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,14 +46,16 @@ public class HintNotePickup : MonoBehaviour
         {
             pickedUp = true;
 
-            // play pickup sound (won't get cut off after Destroy)
-            if (pickupClip != null && Camera.main != null)
-                AudioSource.PlayClipAtPoint(pickupClip, Camera.main.transform.position, pickupVolume);
+            // play pickup sound as true 2D (no left/right)
+            if (pickupClip != null && sfx != null)
+                sfx.PlayOneShot(pickupClip, pickupVolume);
 
             var hud = RoomManager.Instance != null ? RoomManager.Instance.GetHUD() : null;
             if (hud != null) hud.ShowDialogue(message, showSeconds);
 
-            Destroy(gameObject);
+            // don't cut the sound off
+            float delay = (pickupClip != null) ? pickupClip.length : 0f;
+            Destroy(gameObject, delay);
         }
     }
 }

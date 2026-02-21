@@ -15,6 +15,10 @@ public class RoomManager : MonoBehaviour
 
     [SerializeField] private int exitDoorId = 3;
 
+    [Header("Audio - Both Halves")]
+    [SerializeField] private AudioClip bothHalvesClip;
+    [SerializeField, Range(0f, 1f)] private float bothHalvesVolume = 0.9f;
+
     [Header("Key Halves")]
     [SerializeField] private GameObject keyHalfAPrefab;
     [SerializeField] private GameObject keyHalfBPrefab;
@@ -267,7 +271,15 @@ public class RoomManager : MonoBehaviour
        
         if (hud != null)
             hud.SetRoomCounter(currentRoomId);
-        
+
+        if (MusicPlayer.Instance != null)
+        {
+            if (roomId == exitRoomId && exitRoomLightsOff)
+                MusicPlayer.Instance.PlayDarkRoomLoop();
+            else
+                MusicPlayer.Instance.PlayGameLoop();
+        }
+
     }
 
     private void GenerateMapping()
@@ -337,12 +349,16 @@ public class RoomManager : MonoBehaviour
         {
 
             CameraShake2D.Instance?.Shake(0.25f, 0.12f);
+
+
+            if (keySfxSource != null && bothHalvesClip != null)
+                keySfxSource.PlayOneShot(bothHalvesClip, bothHalvesVolume);
             // Both halves collected: turn off lights in exit room until mini-game is won
             SetExitRoomLightsEnabled(false);
             
 
         }
-
+       
     }
 
     public void CollectHalfB()
@@ -361,6 +377,9 @@ public class RoomManager : MonoBehaviour
         {
 
             CameraShake2D.Instance?.Shake(0.25f, 0.12f);
+
+            if (keySfxSource != null && bothHalvesClip != null)
+                keySfxSource.PlayOneShot(bothHalvesClip, bothHalvesVolume);
             // Both halves collected: turn off lights in exit room until mini-game is won
             SetExitRoomLightsEnabled(false);
           

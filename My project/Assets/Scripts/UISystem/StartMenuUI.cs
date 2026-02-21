@@ -8,12 +8,19 @@ public class StartMenuUI : MonoBehaviour
     [Header("Scene")]
     [SerializeField] private string gameSceneName = "Game";
 
-    [Header("Intro Panel")]
+    [Header("Intro UI")]
     [SerializeField] private GameObject introPanel;
-    [SerializeField] private RectTransform introTextRect; // RectTransform of TMP text
-    [SerializeField] private float scrollDuration = 6f;
-    [SerializeField] private float startY = -700f; // below screen
-    [SerializeField] private float endY = 700f;    // above screen
+
+    [SerializeField] private RectTransform storyTextRect;  // StoryText RectTransform
+    [SerializeField] private GameObject finalLineObject;   // FinalLine GameObject
+
+    [Header("Timing")]
+    [SerializeField] private float scrollDuration = 5f;
+    [SerializeField] private float holdAfterFinal = 2f;
+
+    [Header("Scroll Positions")]
+    [SerializeField] private float startY = -800f; // start below screen
+    [SerializeField] private float endY = 120f;    // end slightly above center (so final line has space)
 
     private bool starting = false;
 
@@ -22,24 +29,26 @@ public class StartMenuUI : MonoBehaviour
         if (starting) return;
         starting = true;
 
-        StartCoroutine(PlayIntroThenStart());
+        StartCoroutine(IntroThenStart());
     }
 
-    private IEnumerator PlayIntroThenStart()
+    private IEnumerator IntroThenStart()
     {
-        // show panel
         if (introPanel != null)
             introPanel.SetActive(true);
 
-        // reset text position to bottom
-        if (introTextRect != null)
+        if (finalLineObject != null)
+            finalLineObject.SetActive(false);
+
+        // reset story text to bottom
+        if (storyTextRect != null)
         {
-            Vector2 p = introTextRect.anchoredPosition;
+            Vector2 p = storyTextRect.anchoredPosition;
             p.y = startY;
-            introTextRect.anchoredPosition = p;
+            storyTextRect.anchoredPosition = p;
         }
 
-        // scroll up over time
+        // scroll story paragraph upward
         float t = 0f;
         while (t < scrollDuration)
         {
@@ -48,17 +57,28 @@ public class StartMenuUI : MonoBehaviour
             float a = Mathf.Clamp01(t / scrollDuration);
             float y = Mathf.Lerp(startY, endY, a);
 
-            if (introTextRect != null)
+            if (storyTextRect != null)
             {
-                Vector2 p = introTextRect.anchoredPosition;
+                Vector2 p = storyTextRect.anchoredPosition;
                 p.y = y;
-                introTextRect.anchoredPosition = p;
+                storyTextRect.anchoredPosition = p;
             }
 
             yield return null;
         }
 
-        // load game
+        // show final line in red (fixed center)
+        if (finalLineObject != null)
+            finalLineObject.SetActive(true);
+
+        // hold for dramatic beat
+        float h = 0f;
+        while (h < holdAfterFinal)
+        {
+            h += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(gameSceneName);
     }
