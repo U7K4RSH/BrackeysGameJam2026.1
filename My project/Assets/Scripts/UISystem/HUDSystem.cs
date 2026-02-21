@@ -36,7 +36,8 @@ public class SimpleHUD : MonoBehaviour
         if (keyIcon != null) keyIcon.SetActive(false);
         if (keyHalfAIcon != null) keyHalfAIcon.SetActive(false);
         if (keyHalfBIcon != null) keyHalfBIcon.SetActive(false);
-        if (dialoguePanel != null) dialoguePanel.SetActive(false);
+        if (dialoguePanel != null && !dialoguePanel.activeSelf)
+            dialoguePanel.SetActive(false);
     }
 
     public void TogglePause()

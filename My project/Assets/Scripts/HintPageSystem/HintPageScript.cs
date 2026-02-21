@@ -46,14 +46,13 @@ public class HintNotePickup : MonoBehaviour
         {
             pickedUp = true;
 
-            // play pickup sound as true 2D (no left/right)
+            
             if (pickupClip != null && sfx != null)
                 sfx.PlayOneShot(pickupClip, pickupVolume);
 
             var hud = RoomManager.Instance != null ? RoomManager.Instance.GetHUD() : null;
             if (hud != null) hud.ShowDialogue(message, showSeconds);
 
-            // don't cut the sound off
             float delay = (pickupClip != null) ? pickupClip.length : 0f;
             Destroy(gameObject, delay);
         }

@@ -671,6 +671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1420949019593338160}
   - component: {fileID: 5617908017187801722}
+  - component: {fileID: 8409268008243929647}
   m_Layer: 0
   m_Name: Glint
   m_TagString: Untagged
@@ -687,11 +688,11 @@ Transform:
   m_GameObject: {fileID: 690086882488071843}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.011896, y: 7.983253, z: 0}
-  m_LocalScale: {x: 1.1971059, y: 1.1971059, z: 1.1971059}
+  m_LocalPosition: {x: 0.0395, y: 0.0989, z: 0}
+  m_LocalScale: {x: 0.09235091, y: 0.09235091, z: 0.09235091}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4294190599536206929}
+  m_Father: {fileID: 2608805354720301529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5617908017187801722
 SpriteRenderer:
@@ -752,6 +753,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &8409268008243929647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690086882488071843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbddc62ecaa4584ba2dfbf885c3917e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlintPulse
+  sr: {fileID: 0}
+  speed: 6
+  minA: 0.15
+  maxA: 1
 --- !u!1 &890850703634790419
 GameObject:
   m_ObjectHideFlags: 0
@@ -6513,7 +6530,8 @@ Transform:
   m_LocalPosition: {x: -8.8, y: 6.01, z: 0}
   m_LocalScale: {x: 19.952002, y: 19.952002, z: 19.952002}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1420949019593338160}
   m_Father: {fileID: 4294190599536206929}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &680812905152421351
@@ -6822,7 +6840,6 @@ Transform:
   - {fileID: 9191978447821166373}
   - {fileID: 6599647888855399893}
   - {fileID: 2608805354720301529}
-  - {fileID: 1420949019593338160}
   - {fileID: 421656182637729812}
   - {fileID: 6291763342388444315}
   - {fileID: 5266897093378844384}
@@ -6835,7 +6852,6 @@ Transform:
   - {fileID: 7765361112401230696}
   - {fileID: 5385632261756704495}
   - {fileID: 3849116389486376420}
-  - {fileID: 5452662156233708482}
   - {fileID: 1941689809205634191}
   - {fileID: 5040799241359063526}
   - {fileID: 2368567981015253126}
@@ -7056,7 +7072,8 @@ Transform:
   m_LocalPosition: {x: 5.3, y: 5.25, z: 0}
   m_LocalScale: {x: 42.468704, y: 42.468704, z: 42.468704}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5452662156233708482}
   m_Father: {fileID: 4294190599536206929}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8350055908783990540
@@ -12177,6 +12194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5452662156233708482}
   - component: {fileID: 7607600632912808481}
+  - component: {fileID: 3048713938129492080}
   m_Layer: 0
   m_Name: Glint
   m_TagString: Untagged
@@ -12193,11 +12211,11 @@ Transform:
   m_GameObject: {fileID: 8460227466287392964}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.318973, y: 4.9060035, z: 0}
-  m_LocalScale: {x: 1.552953, y: 1.552953, z: 1.552953}
+  m_LocalPosition: {x: -0.0231, y: -0.0081, z: 0}
+  m_LocalScale: {x: 0.048849847, y: 0.048849847, z: 0.048849847}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4294190599536206929}
+  m_Father: {fileID: 3849116389486376420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7607600632912808481
 SpriteRenderer:
@@ -12258,6 +12276,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &3048713938129492080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460227466287392964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbddc62ecaa4584ba2dfbf885c3917e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlintPulse
+  sr: {fileID: 0}
+  speed: 6
+  minA: 0.15
+  maxA: 1
 --- !u!1 &8716282714150629469
 GameObject:
   m_ObjectHideFlags: 0

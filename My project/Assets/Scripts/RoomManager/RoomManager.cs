@@ -37,6 +37,11 @@ public class RoomManager : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float doorVolume = 0.8f;
     [SerializeField] private AudioSource doorSfxSource;
 
+    [Header("Start Dialogue")]
+    [SerializeField] private string startDialogue = "Where the hell am I...?";
+    [SerializeField] private float startDialogueSeconds = 5f;
+    private bool startDialoguePlayed = false;
+
     // When true, the next room loaded will receive the hint paper
     private bool spawnHintNextRoom = false;
     private GameObject spawnedHint;
@@ -121,7 +126,6 @@ public class RoomManager : MonoBehaviour
 
         int n = roomPrefabs.Length;
 
-        
         exitRoomId = n - 1;
 
         halfARoomId = rng.Next(0, n);
@@ -136,6 +140,18 @@ public class RoomManager : MonoBehaviour
 
         GenerateMapping();
         LoadRoom(0, entryDoorId: 0, useDefaultSpawn: true);
+
+        // Snap the camera immediately on first room too (same reason as transitions)
+        var camFollower = FindAnyObjectByType<CameraFollow2D>();
+        if (camFollower != null)
+            camFollower.SnapToTarget();
+
+        // Fade in when the level starts (FIRST TIME)
+        if (FadeTransitionManager.Instance != null)
+            FadeTransitionManager.Instance.FadeIn();
+
+        // show start dialogue AFTER fade finishes (so it doesn't get hidden behind black)
+        StartCoroutine(ShowStartDialogueAfterFade());
 
         // Schedule a hint to appear in the next room entered after 30s
         Invoke(nameof(EnableHintNextRoomFlag), 30f);
@@ -271,6 +287,15 @@ public class RoomManager : MonoBehaviour
        
         if (hud != null)
             hud.SetRoomCounter(currentRoomId);
+
+        if (!startDialoguePlayed && roomId == 0)
+        {
+            startDialoguePlayed = true;
+
+            var h = (hud != null) ? hud : SimpleHUD.Instance;
+            if (h != null)
+                h.ShowDialogue(startDialogue, startDialogueSeconds);
+        }
 
         if (MusicPlayer.Instance != null)
         {
@@ -445,7 +470,16 @@ public class RoomManager : MonoBehaviour
     public void SetExitRoomLightsEnabled(bool enabled)
     {
         exitRoomLightsOff = !enabled;
+
         ApplyExitRoomLightsState();
+
+        if (MusicPlayer.Instance != null)
+        {
+            if (currentRoomId == exitRoomId && exitRoomLightsOff)
+                MusicPlayer.Instance.PlayDarkRoomLoop();
+            else
+                MusicPlayer.Instance.PlayGameLoop();
+        }
     }
 
     private void ApplyExitRoomLightsState()
@@ -458,7 +492,8 @@ public class RoomManager : MonoBehaviour
             if (exitRoomLightsOff)
             {
                 hasSeenExitRoomDark = true;
-                hud.ShowDialogue("It's too dark here — turn the lights on first.");
+                if (hud != null)
+                    hud.ShowDialogue("I cant see anything, i think i need to turn the lights on first");
                 if (!exitRoomOriginalRotationStored)
                 {
                     exitRoomOriginalRotation = currentRoom.transform.rotation;
@@ -495,5 +530,13 @@ public class RoomManager : MonoBehaviour
             }
         }
     }
+    private IEnumerator ShowStartDialogueAfterFade()
+    {
+        // wait for configured fade duration
+        if (FadeTransitionManager.Instance != null)
+            yield return new WaitForSeconds(FadeTransitionManager.Instance.FadeDuration);
 
+        if (hud != null)
+            hud.ShowDialogue(startDialogue, startDialogueSeconds);
+    }
 }
