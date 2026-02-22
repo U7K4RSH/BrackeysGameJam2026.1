@@ -803,6 +803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3238623903513103159}
   - component: {fileID: 5836947540528892736}
+  - component: {fileID: 5574420158544131280}
   m_Layer: 0
   m_Name: Glint
   m_TagString: Untagged
@@ -819,11 +820,11 @@ Transform:
   m_GameObject: {fileID: 1175067800060946968}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.4274654, y: 2.7560449, z: 0}
-  m_LocalScale: {x: 1.6504049, y: 1.6504049, z: 1.6504049}
+  m_LocalPosition: {x: 0.055299997, y: 0.0518, z: 0}
+  m_LocalScale: {x: 0.06910686, y: 0.06910686, z: 0.06910686}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2740938482780700058}
+  m_Father: {fileID: 5143593449994904035}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5836947540528892736
 SpriteRenderer:
@@ -884,6 +885,25 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &5574420158544131280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175067800060946968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbddc62ecaa4584ba2dfbf885c3917e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlintPulse
+  sr: {fileID: 0}
+  alphaSpeed: 3
+  minA: 0.15
+  maxA: 1
+  scaleSpeed: 3
+  minScale: 0.9
+  maxScale: 1.1
 --- !u!1 &1474136691086898751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,10 +3050,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6796440583730603628}
   - component: {fileID: 2043236785440522251}
-  - component: {fileID: 2502398930447551818}
   - component: {fileID: 8005547741777758215}
   - component: {fileID: 3186779791924809825}
   - component: {fileID: 6400651103095007530}
+  - component: {fileID: 2723998782911317466}
   m_Layer: 0
   m_Name: Hotel_Room_65
   m_TagString: Untagged
@@ -3053,7 +3073,8 @@ Transform:
   m_LocalPosition: {x: -8.12, y: 5.92, z: 0}
   m_LocalScale: {x: 41.326435, y: 41.326435, z: 41.326435}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7622830646240822334}
   m_Father: {fileID: 2740938482780700058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2043236785440522251
@@ -3115,52 +3136,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &2502398930447551818
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2946418733999382687}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.0027981643, y: 0.032839857}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.061197918, y: 0.12630208}
-    newSize: {x: 0.061197918, y: 0.12630208}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.055601593, y: 0.060622368}
-  m_EdgeRadius: 0
 --- !u!114 &8005547741777758215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3181,9 +3156,9 @@ MonoBehaviour:
   glintObject: {fileID: 9002840354644212252}
   searchClip: {fileID: 0}
   searchVolume: 0.8
-  sfxSource: {fileID: 0}
-  nothingFoundClip: {fileID: 0}
-  keyFoundClip: {fileID: 0}
+  sfxSource: {fileID: 6400651103095007530}
+  nothingFoundClip: {fileID: 8300000, guid: 83324c1afab489d469830a3f0b19a256, type: 3}
+  keyFoundClip: {fileID: 8300000, guid: 3ed76ff58ae2b1947b1e76e6426fbdc9, type: 3}
   resultVolume: 0.9
   interactIdOverride: 
 --- !u!61 &3186779791924809825
@@ -3220,7 +3195,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.015454382}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3230,7 +3205,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.061197918, y: 0.12630208}
+  m_Size: {x: 0.061197918, y: 0.095393315}
   m_EdgeRadius: 0
 --- !u!82 &6400651103095007530
 AudioSource:
@@ -3329,6 +3304,59 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &2723998782911317466
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2946418733999382687}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.061197918, y: 0.12630208}
+    newSize: {x: 0.061197918, y: 0.12630208}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.031535573, y: -0.019129496}
+      - {x: -0.0211649, y: -0.014446348}
+      - {x: 0.036218725, y: 0.036518835}
+      - {x: 0.030598959, y: 0.06315105}
+      - {x: 0.018880209, y: 0.06315105}
+      - {x: -0.030598959, y: 0.04231771}
+  m_UseDelaunayMesh: 1
 --- !u!1 &3080300878775926625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,11 +3392,9 @@ Transform:
   - {fileID: 6219748241952875782}
   - {fileID: 1844107150256564653}
   - {fileID: 5143593449994904035}
-  - {fileID: 3238623903513103159}
   - {fileID: 8709079820302817053}
   - {fileID: 507423403164784992}
   - {fileID: 6796440583730603628}
-  - {fileID: 7622830646240822334}
   - {fileID: 3846474963415539436}
   - {fileID: 6515535860146862461}
   - {fileID: 3679390790410287415}
@@ -5564,7 +5590,8 @@ Transform:
   m_LocalPosition: {x: -8.11, y: 1.18, z: 0}
   m_LocalScale: {x: 30.425575, y: 30.425575, z: 30.425575}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3238623903513103159}
   m_Father: {fileID: 2740938482780700058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4551812306072361385
@@ -5660,7 +5687,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0012668818, y: 0.00023317523}
+  m_Offset: {x: -0.0012668818, y: 0.0040497864}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5670,7 +5697,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.11335164, y: 0.03256013}
+  m_Size: {x: 0.11335164, y: 0.04019335}
   m_EdgeRadius: 0
 --- !u!114 &7673938477696292566
 MonoBehaviour:
@@ -5692,9 +5719,9 @@ MonoBehaviour:
   glintObject: {fileID: 1175067800060946968}
   searchClip: {fileID: 0}
   searchVolume: 0.8
-  sfxSource: {fileID: 0}
-  nothingFoundClip: {fileID: 0}
-  keyFoundClip: {fileID: 0}
+  sfxSource: {fileID: 5561358572605591980}
+  nothingFoundClip: {fileID: 8300000, guid: 83324c1afab489d469830a3f0b19a256, type: 3}
+  keyFoundClip: {fileID: 8300000, guid: 3ed76ff58ae2b1947b1e76e6426fbdc9, type: 3}
   resultVolume: 0.9
   interactIdOverride: 
 --- !u!61 &9077573404579240279
@@ -7289,6 +7316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 507423403164784992}
   - component: {fileID: 6394524904362713768}
+  - component: {fileID: 2863159353815666641}
   m_Layer: 0
   m_Name: Hotel_Room_67
   m_TagString: Untagged
@@ -7370,6 +7398,27 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &2863159353815666641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211819233250782246}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.046875, y: 0.0052264803, z: 0.19999999}
+  m_Center: {x: 0, y: 0.019524798, z: 0}
 --- !u!1 &7307120871735004822
 GameObject:
   m_ObjectHideFlags: 0
@@ -11029,6 +11078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7622830646240822334}
   - component: {fileID: 7374611803808143315}
+  - component: {fileID: 8810545805921855691}
   m_Layer: 0
   m_Name: Glint
   m_TagString: Untagged
@@ -11045,11 +11095,11 @@ Transform:
   m_GameObject: {fileID: 9002840354644212252}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.9628596, y: 8.387188, z: 0}
-  m_LocalScale: {x: 2.2852328, y: 2.2852328, z: 2.2852328}
+  m_LocalPosition: {x: 0.028000003, y: 0.059699994, z: 0}
+  m_LocalScale: {x: 0.05529712, y: 0.05529712, z: 0.05529712}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2740938482780700058}
+  m_Father: {fileID: 6796440583730603628}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7374611803808143315
 SpriteRenderer:
@@ -11110,3 +11160,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &8810545805921855691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9002840354644212252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbddc62ecaa4584ba2dfbf885c3917e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlintPulse
+  sr: {fileID: 0}
+  alphaSpeed: 3
+  minA: 0.15
+  maxA: 1
+  scaleSpeed: 3
+  minScale: 0.9
+  maxScale: 1.1

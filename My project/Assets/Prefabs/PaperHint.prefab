@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2232673907210377130}
   - component: {fileID: 4022879716138373072}
+  - component: {fileID: 1578960388324771044}
   m_Layer: 0
   m_Name: Glint
   m_TagString: Untagged
@@ -91,6 +92,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1578960388324771044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105424049266352688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbddc62ecaa4584ba2dfbf885c3917e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlintPulse
+  sr: {fileID: 0}
+  speed: 3
+  minA: 0.15
+  maxA: 1
 --- !u!1 &1477972067669530051
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +121,7 @@ GameObject:
   - component: {fileID: 5937153141559290106}
   - component: {fileID: 1425353123977849175}
   - component: {fileID: 7187219764124087513}
+  - component: {fileID: 5469226603111710531}
   m_Layer: 0
   m_Name: PaperHint
   m_TagString: Untagged
@@ -300,5 +318,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9333d352ef6be704194094c8a8c0388a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HintNotePickup
-  message: Check Objects with a glints. You need both key halves, and reach the sofaRoom
+  message: Someone left a note here, - 'Check cabinets with a glint. You need both
+    key halves.'
   showSeconds: 6
+  pickupClip: {fileID: 8300000, guid: 68e7bca1096279243b82b24034789b1b, type: 3}
+  pickupVolume: 0.9
+--- !u!82 &5469226603111710531
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477972067669530051}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

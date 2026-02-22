@@ -89,14 +89,14 @@ public class InteractionObject : MonoBehaviour
             // flag for mini-games so they can be reopened repeatedly.
             if (spawnsMiniGame)
             {
-                if (RoomManager.Instance != null && RoomManager.Instance.HasBothHalves())
+                if (RoomManager.Instance != null && RoomManager.Instance.HasBothHalves() && RoomManager.Instance.HasSeenDarkRoom())
                 {
                     HandleInteraction();
                 }
                 else
                 {
                     if (RoomManager.Instance != null)
-                        SimpleHUD.Instance.ShowDialogue("Nothing happens.");
+                        SimpleHUD.Instance.ShowDialogue("Looks like a light panel, but i cant use it now!");
                 }
             }
             else
@@ -167,8 +167,8 @@ public class InteractionObject : MonoBehaviour
 
         if (RoomManager.Instance != null)
         {
-            if (spawned) SimpleHUD.Instance.ShowDialogue("You found a key piece!");
-            else SimpleHUD.Instance.ShowDialogue("You searched... but found nothing.");
+            if (spawned) SimpleHUD.Instance.ShowDialogue("I found a key piece!");
+            else SimpleHUD.Instance.ShowDialogue("Hmm..., I tried searching....but found nothing");
         }
     }
 

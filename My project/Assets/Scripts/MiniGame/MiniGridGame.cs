@@ -45,20 +45,21 @@ public class MiniGridGame : MonoBehaviour
     private void EnsureCanvas()
     {
         if (parentCanvas != null) return;
-        var existing = Canvas.FindAnyObjectByType<Canvas>();
-        if (existing != null)
-        {
-            parentCanvas = existing;
-            return;
-        }
 
+        // IMPORTANT: always create a dedicated canvas so HUD/blackout overlays can't cover it
         var go = new GameObject("MiniGameCanvas");
         var canvas = go.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+
+        // Keep it above everything else (HUD overlays, black screens, etc.)
+        canvas.sortingOrder = 1000;
+
         go.AddComponent<CanvasScaler>();
         go.AddComponent<GraphicRaycaster>();
+
         parentCanvas = canvas;
         createdCanvas = true;
+
         DontDestroyOnLoad(go);
     }
 
@@ -135,6 +136,7 @@ public class MiniGridGame : MonoBehaviour
                 buttons[r, c] = btn;
             }
         }
+        panel.transform.SetAsLastSibling();
     }
 
     private void InitializeGrid()
@@ -211,12 +213,12 @@ public class MiniGridGame : MonoBehaviour
 
     private void OnWin()
     {
-        Debug.Log("Mini-game complete! All buttons are ON.");
+        
         // Notify RoomManager to re-enable lights in the exit room
         if (RoomManager.Instance != null)
         {
             RoomManager.Instance.SetExitRoomLightsEnabled(true);
-            Debug.Log("Notified RoomManager to re-enable exit room lights.");
+           
         }
     }
 
